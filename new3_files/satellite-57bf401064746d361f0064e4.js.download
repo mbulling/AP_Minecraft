@@ -1,0 +1,29 @@
+/**
+ * Created by jbeach in 2016
+ * Updated by jbeach on 2018-01-19
+ */
+kiwi = window.kiwi || {};
+
+var ruleName='KIWI: PLR > 00 Master - Page Bottom > JS Tags';
+//_satellite.notify(ruleName);
+
+/* getLoadTime Plug In - Part 2 */
+kiwi._pageLoadTime = s_getLoadTime();
+/* end getLoadTime Plug In - Part 2 */
+
+/*if ($) {
+    $('iframe[src^="https://www.youtube.com/embed/"]').each(function(idx){
+        var src = $(this).attr('src');
+        if (src.match(/([?|&]enablejsapi=)[^\&]+/i)) {
+            src.replace(/([?|&]enablejsapi=)[^\&]+/i, '$1' + '1');
+        } else {
+            if (src.match(/\?/i)) {
+                if (src.match(/\?[^$]/i)) src += '&enablejsapi=1';
+                if (src.match(/\?$/i)) src.replace(/\?$/i, '?enablejsapi=1');
+            } else {
+                src += '?enablejsapi=1';
+            }
+        }
+    });
+} */
+
