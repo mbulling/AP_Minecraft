@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="en">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="https://apcentral.collegeboard.org/profiles/uwe_profile/themes/custom/apricot_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="Explore timing and format for the AP Computer Science A Exam, and review sample questions, scoring guidelines, and sample student responses." />
+<meta name="keywords" content="Java,case study,code,exam format,programming" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://apcentral.collegeboard.org/courses/ap-computer-science-a/exam" />
+<link rel="shortlink" href="https://apcentral.collegeboard.org/node/7905?course=ap-computer-science-a" />
+<meta property="og:site_name" content="AP Central" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://apcentral.collegeboard.org/courses/ap-computer-science-a/exam?course=ap-computer-science-a" />
+<meta property="og:title" content="AP Computer Science A: The Exam | AP Central – The College Board" />
+<meta property="og:description" content="Important Updates   Preparing Students for the Exam" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@CollegeBoard" />
+<meta name="twitter:url" content="https://apcentral.collegeboard.org/courses/ap-computer-science-a/exam?course=ap-computer-science-a" />
+<meta property="article:published_time" content="2006-07-10T08:12:40-04:00" />
+<meta property="article:modified_time" content="2019-05-20T01:08:07-04:00" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+  <title>AP Computer Science A: The Exam | AP Central – The College Board</title>
+  <!-- Inject the adobe tag manager script in the html head tag. -->
+  <script src="//assets.adobedtm.com/7a8a98de0363fbed05b98da851d6b23866ffa7cc/satelliteLib-0397ae4916dd85521cee60125d909021a2f2d335.js"></script>
+  <style type="text/css" media="all">
+@import url("https://apcentral.collegeboard.org/modules/system/system.base.css?prtd22");
+@import url("https://apcentral.collegeboard.org/modules/system/system.menus.css?prtd22");
+@import url("https://apcentral.collegeboard.org/modules/system/system.messages.css?prtd22");
+</style>
+<link type="text/css" rel="stylesheet" href="//mango.collegeboard.org/apricot/prod/3.4.0/css/apricot.min.css" media="all" />
+<style type="text/css" media="all">
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/modules/contrib/jquery_update/replace/ui/themes/base/minified/jquery.ui.core.min.css?prtd22");
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/modules/contrib/jquery_update/replace/ui/themes/base/minified/jquery.ui.theme.min.css?prtd22");
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/modules/contrib/jquery_update/replace/ui/themes/base/minified/jquery.ui.menu.min.css?prtd22");
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/modules/contrib/jquery_update/replace/ui/themes/base/minified/jquery.ui.autocomplete.min.css?prtd22");
+</style>
+<style type="text/css" media="all">
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/modules/custom/bootstrap_lightbox/css/bootstrap_lightbox.css?prtd22");
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/modules/features/cb_article/css/cb_article.css?prtd22");
+@import url("https://apcentral.collegeboard.org/sites/all/modules/features/cb_article_apc_fields/css/cb_article_apc_overrides.css?prtd22");
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/modules/features/cb_gallery/css/cb_gallery.css?prtd22");
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/modules/contrib/date/date_api/date.css?prtd22");
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/modules/contrib/date/date_popup/themes/datepicker.1.7.css?prtd22");
+@import url("https://apcentral.collegeboard.org/modules/field/theme/field.css?prtd22");
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/modules/contrib/field_hidden/field_hidden.css?prtd22");
+@import url("https://apcentral.collegeboard.org/modules/node/node.css?prtd22");
+@import url("https://apcentral.collegeboard.org/modules/user/user.css?prtd22");
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/modules/contrib/extlink/extlink.css?prtd22");
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/modules/contrib/views/css/views.css?prtd22");
+</style>
+<link type="text/css" rel="stylesheet" href="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/custom/cb_wysiwyg_plugins/css/cb_wysiwyg_plugins.css?prtd22" media="all" />
+<style type="text/css" media="all">
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/modules/ctools/css/ctools.css?prtd22");
+@import url("https://apcentral.collegeboard.org/sites/all/modules/custom/apc_local_nav_widths/css/local-nav-fix.css?prtd22");
+@import url("https://apcentral.collegeboard.org/sites/all/modules/features/cb_article_apc_fields/css/author_columns.css?prtd22");
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/modules/features/cb_document_list/ds_layouts/apricot_item_list/apricot_item_list.css?prtd22");
+</style>
+<style type="text/css" media="screen">
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/themes/custom/apricot_theme/css/apricot_theme.css?prtd22");
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/themes/custom/apricot_theme/css/apricot_layout.css?prtd22");
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/themes/custom/apricot_theme/css/navigation/top_navigation.css?prtd22");
+</style>
+<style type="text/css" media="all">
+@import url("https://apcentral.collegeboard.org/profiles/uwe_profile/themes/custom/apricot_theme/css/system.theme.css?prtd22");
+</style>
+<link type="text/css" rel="stylesheet" href="//mango.collegeboard.org/cbmango1/prod/drupal/all/10/all.css" media="all" />
+<link type="text/css" rel="stylesheet" href="" media="all" />
+  <script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/misc/jquery-extend-3.4.0.js?v=1.10.2"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/misc/drupal.js?prtd22"></script>
+<script type="text/javascript" src="//mango.collegeboard.org/apricot/prod/3.4.0/js/apricot.min.js"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/contrib/jquery_update/replace/ui/ui/minified/jquery.ui.core.min.js?v=1.10.2"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/contrib/jquery_update/replace/ui/ui/minified/jquery.ui.widget.min.js?v=1.10.2"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/contrib/jquery_update/replace/ui/ui/minified/jquery.ui.position.min.js?v=1.10.2"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/contrib/jquery_update/replace/ui/ui/minified/jquery.ui.menu.min.js?v=1.10.2"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/contrib/jquery_update/replace/ui/ui/minified/jquery.ui.autocomplete.min.js?v=1.10.2"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/custom/bootstrap_assistive_link/js/bootstrap_assistive_link.js?prtd22"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/custom/bootstrap_lightbox/js/bootstrap_lightbox.js?prtd22"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/contrib/extlink/extlink.js?prtd22"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/features/cb_portals/js/resources.js?prtd22"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/custom/cb_wysiwyg_plugins/js/cb_wysiwyg_plugins.js?prtd22"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+$ = jQuery
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/custom/apricot/js/footnotes.js?prtd22"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/features/cb_resources/js/photo-gallery.js?prtd22"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/custom/apricot/js/local_nav.js?prtd22"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/sites/all/modules/features/cb_article_apc_fields/js/author_columns.js?prtd22"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/custom/global_header_footer/js/global_footer.js?prtd22"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/themes/custom/apricot_theme/js/plugins.js?prtd22"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/themes/custom/apricot_theme/js/libs/sticky-kit/jquery.sticky-kit.min.js?prtd22"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/themes/custom/apricot_theme/js/apricot_theme.js?prtd22"></script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/themes/custom/apricot_theme/js/navigation/top_navigation.js?prtd22"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"apricot_theme","theme_token":"jIe5tTf299NUTJAVWOWZn08Dz75Iyw5URkdcvZv2bvQ","js":{"\/\/mango.collegeboard.org\/cbmango1\/prod\/drupal\/all\/10\/all.js":1,"0":1,"profiles\/uwe_profile\/modules\/custom\/global_header_footer\/js\/global_header.js":1,"profiles\/uwe_profile\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/mango.collegeboard.org\/apricot\/prod\/3.4.0\/js\/apricot.min.js":1,"profiles\/uwe_profile\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"profiles\/uwe_profile\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"profiles\/uwe_profile\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.position.min.js":1,"profiles\/uwe_profile\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.menu.min.js":1,"profiles\/uwe_profile\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.autocomplete.min.js":1,"profiles\/uwe_profile\/modules\/custom\/bootstrap_assistive_link\/js\/bootstrap_assistive_link.js":1,"profiles\/uwe_profile\/modules\/custom\/bootstrap_lightbox\/js\/bootstrap_lightbox.js":1,"profiles\/uwe_profile\/modules\/contrib\/extlink\/extlink.js":1,"profiles\/uwe_profile\/modules\/features\/cb_portals\/js\/resources.js":1,"profiles\/uwe_profile\/modules\/custom\/cb_wysiwyg_plugins\/js\/cb_wysiwyg_plugins.js":1,"1":1,"profiles\/uwe_profile\/modules\/custom\/apricot\/js\/footnotes.js":1,"profiles\/uwe_profile\/modules\/features\/cb_resources\/js\/photo-gallery.js":1,"profiles\/uwe_profile\/modules\/custom\/apricot\/js\/local_nav.js":1,"sites\/all\/modules\/features\/cb_article_apc_fields\/js\/author_columns.js":1,"profiles\/uwe_profile\/modules\/custom\/global_header_footer\/js\/global_footer.js":1,"profiles\/uwe_profile\/themes\/custom\/apricot_theme\/js\/plugins.js":1,"profiles\/uwe_profile\/themes\/custom\/apricot_theme\/js\/libs\/sticky-kit\/jquery.sticky-kit.min.js":1,"profiles\/uwe_profile\/themes\/custom\/apricot_theme\/js\/apricot_theme.js":1,"profiles\/uwe_profile\/themes\/custom\/apricot_theme\/js\/navigation\/top_navigation.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"\/\/mango.collegeboard.org\/apricot\/prod\/3.4.0\/css\/apricot.min.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.menu.css":1,"misc\/ui\/jquery.ui.autocomplete.css":1,"profiles\/uwe_profile\/modules\/custom\/bootstrap_lightbox\/css\/bootstrap_lightbox.css":1,"profiles\/uwe_profile\/modules\/features\/cb_article\/css\/cb_article.css":1,"sites\/all\/modules\/features\/cb_article_apc_fields\/css\/cb_article_apc_overrides.css":1,"profiles\/uwe_profile\/modules\/features\/cb_gallery\/css\/cb_gallery.css":1,"profiles\/uwe_profile\/modules\/contrib\/date\/date_api\/date.css":1,"profiles\/uwe_profile\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"profiles\/uwe_profile\/modules\/contrib\/field_hidden\/field_hidden.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"profiles\/uwe_profile\/modules\/contrib\/extlink\/extlink.css":1,"profiles\/uwe_profile\/modules\/contrib\/views\/css\/views.css":1,"profiles\/uwe_profile\/modules\/custom\/cb_wysiwyg_plugins\/css\/cb_wysiwyg_plugins.css":1,"profiles\/uwe_profile\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/custom\/apc_local_nav_widths\/css\/local-nav-fix.css":1,"sites\/all\/modules\/features\/cb_article_apc_fields\/css\/author_columns.css":1,"profiles\/uwe_profile\/modules\/features\/cb_document_list\/ds_layouts\/apricot_item_list\/apricot_item_list.css":1,"profiles\/uwe_profile\/themes\/custom\/apricot_theme\/css\/apricot_theme.css":1,"profiles\/uwe_profile\/themes\/custom\/apricot_theme\/css\/apricot_layout.css":1,"profiles\/uwe_profile\/themes\/custom\/apricot_theme\/css\/navigation\/top_navigation.css":1,"profiles\/uwe_profile\/themes\/custom\/apricot_theme\/field_collection.theme.css":1,"profiles\/uwe_profile\/themes\/custom\/apricot_theme\/css\/system.theme.css":1,"\/\/mango.collegeboard.org\/cbmango1\/prod\/drupal\/all\/10\/all.css":1,"":1}},"extlink":{"extTarget":"_blank","extClass":0,"extLabel":"(link is external)","extImgClass":0,"extIconPlacement":"append","extSubdomains":0,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external web site.","mailtoClass":0,"mailtoLabel":"(link sends e-mail)"},"widgets":{"header":{"appId":"160","siteCode":"apc","logo":"","headerTemplate":"globalheader","exposedMenuItems":"4","searchType":"apc_site","useQuickSiteSearchWidget":true,"useLoginWidget":true,"override_links":null,"loginRedirectUrl":"","siteType":"k-12","siteName":"AP","lockupLogo":1,"searchFacetAudience":"Professionals","searchFacetType":"","searchFacetCategory":"AP"},"footer":{"isBottomAligned":false,"useControls":true}},"apricot":{"legacy":false,"local_nav":{"desktopHomeLabel":"Home","desktopLabelPrefix":0,"customHomeLabel":"Overview","mobileHomeLabel":"Home","mobileLabelPrefix":0,"mobileLayout":"tablet","addDesktopParentLabel":false,"addMobileParentLabel":false,"multiLineSiteName":"1","moreLabel":"More"}}});
+//--><!]]>
+</script>
+
+  <!--[if lt IE 9]>
+  <script type="text/javascript"
+          src="/profiles/uwe_profile/themes/custom/apricot_theme/js/libs/css_media_queries/css3-mediaqueries.js"></script>
+  <script type="text/javascript"
+          src="/profiles/uwe_profile/themes/custom/apricot_theme/js/libs/html5shiv/html5shiv-printshiv.js"></script>
+  <![endif]-->
+
+
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"587860",ustr:"",originlat:"0",clientrtt:"16",ghostip:"23.36.1.6",ipv6:false,pct:"10",clientip:"198.180.129.20",requestid:"910d963",region:"33993",protocol:"h2",blver:14,akM:"a",akN:"ae",akTT:"O",akTX:"1",akTI:"910d963",ai:"381997",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    </head>
+
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-7905 node-type-article has-breadcrumbs cb-k-12-program has-tablet-menu "  data-cb-program="k-12">
+
+
+  <div class="region region-page-header">
+    <div id="block-block-1" class="block block-block">
+
+    
+  <div class="content">
+    <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+/* Added as a block */
+.node-type-portal2 .region-branding,
+.page-node-25121 .region-branding {
+    margin-bottom: 1.5em;
+}
+.page-node-34461 .region-branding,
+.page-node-34471 .region-branding,
+.page-node-34496 .region-branding {
+margin-bottom:0em!important;
+}
+
+.cb-accordion .panel-body ul li {
+    font-size: .875em;
+}
+
+.panel .table {
+font-size:1em;
+}
+#main-content .cb-item-list h3.cb-resource-title {
+  padding-bottom: 0.75em;
+}
+
+body.page-node-14891 .cb-item-list.cb-item-list-rich:nth-child(9) > ul > li:first-child {
+  border-top: 1px solid #d9d9d9;
+  margin-top: 15px;
+} 
+
+body .studio-art-demo .cb-photo-gallery ul.cb-photo-gallery-2 li {
+  width:100%;
+}
+
+body.page-node-7087 .node-article .node:nth-child(11) .cb-item-list.cb-item-list-rich > ul > li:first-child,
+body.page-node-7087 .node-article .node:nth-child(12) .cb-item-list.cb-item-list-rich > ul > li:first-child,
+body.page-node-8644 .node-article .node:nth-child(12) .cb-item-list.cb-item-list-rich > ul > li:first-child,
+body.page-node-8644 .node-article .node:nth-child(13) .cb-item-list.cb-item-list-rich > ul > li:first-child,
+body.page-node-7905 .node-article .node:nth-child(10) .cb-item-list.cb-item-list-rich > ul > li:first-child,
+body.page-node-7905 .node-article .node:nth-child(11) .cb-item-list.cb-item-list-rich > ul > li:first-child,
+body.page-node-9063 .node-article .node:nth-child(12) .cb-item-list.cb-item-list-rich > ul > li:first-child,
+body.page-node-9063 .node-article .node:nth-child(13) .cb-item-list.cb-item-list-rich > ul > li:first-child,
+body.page-node-9063 .node-article .node:nth-child(14) .cb-item-list.cb-item-list-rich > ul > li:first-child,
+body.page-node-10103 .node-article .node:nth-child(10) .cb-item-list.cb-item-list-rich > ul > li:first-child,
+body.page-node-10103 .node-article .node:nth-child(11) .cb-item-list.cb-item-list-rich > ul > li:first-child,
+body.page-node-8792 .node-article .node:nth-child(10) .cb-item-list.cb-item-list-rich > ul > li:first-child,
+body.page-node-8792 .node-article .node:nth-child(11) .cb-item-list.cb-item-list-rich > ul > li:first-child,
+body.page-node-10165 .node-article .node:nth-child(10) .cb-item-list.cb-item-list-rich > ul > li:first-child {
+	border-top: inherit;
+}
+ 
+
+.cb-local-navigation .cb-desktop-navigation li {
+    min-width: 7em;
+}
+
+/*--><!]]>*/
+</style>  </div>
+</div>
+<div id="block-global-header-footer-global-header-widget" class="block block-global-header-footer lv-globalheader-init lv-globalheader-init">
+
+    
+  <div class="content">
+    <div id="global-header"></div>  </div>
+</div>
+  </div>
+
+<!-- Placeholder DIV container for CB Notification widget to display site wide, configurable from Alert content type -->
+<div id="cb-notifications-widget">
+</div>
+
+  <div class="top-navigation-wrapper">
+    <nav role="navigation"
+         aria-label="AP Central Navigation"
+         class="top-navigation">
+          <div class="region region-navigation">
+    <div id="block-menu-block-1" class="block block-menu-block">
+
+    
+  <div class="content">
+    <div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-1 cb-local-menu"  >
+  <div class="cb-local-navigation"><div class="container"><nav role="navigation" aria-label="local navigation menu" class="cb-desktop-navigation"> <div class="row"><div class="col-xs-12"><div class="cb-site-name "><a class="title cb-program-name" href="/p1hphome" aria-current="false"><span>AP Central</span></a></div><ul class="menu"><li class="first leaf menu-mlid-58926 home"><a href="/" title="">Home</a></li>
+<li class="expanded menu-mlid-94451 cb-nested dropdown"><a href="/about-ap" title="" class="dropdown-toggle" data-toggle="dropdown" role="button">About AP</a><ul class="menu"><li class="first leaf menu-mlid-95086"><a href="/about-ap" title="">Overview</a></li>
+<li class="leaf menu-mlid-95016"><a href="/about-ap/ap-a-glance">AP at a Glance</a></li>
+<li class="leaf menu-mlid-61746"><a href="/about-ap/discover-benefits">Discover the Benefits of AP</a></li>
+<li class="expanded menu-mlid-61741 cb-nested"><a href="/about-ap/start-grow-ap">Start &amp; Grow AP</a><ul class="menu"><li class="first expanded menu-mlid-61751 cb-nested"><a href="/about-ap/start-grow-ap/start-ap">Start AP</a><ul class="menu"><li class="first leaf menu-mlid-61756"><a href="/about-ap/start-grow-ap/start-ap/get-approved">Get Approved to Administer Exams</a></li>
+<li class="last expanded menu-mlid-61761 cb-nested"><a href="/about-ap/start-grow-ap/start-ap/how-your-school-can-offer-ap">How Your School Can Offer AP Courses</a><ul class="menu"><li class="first leaf menu-mlid-61771"><a href="/about-ap/start-grow-ap/start-ap/how-your-school-can-offer-ap/pre-ap">Pre-AP</a></li>
+<li class="last leaf menu-mlid-61766"><a href="/about-ap/start-grow-ap/start-ap/how-your-school-can-offer-ap/consider-costs">Consider the Costs</a></li>
+</ul></li>
+</ul></li>
+<li class="expanded menu-mlid-61776 cb-nested"><a href="/about-ap/start-grow-ap/grow-ap">Grow AP</a><ul class="menu"><li class="first leaf menu-mlid-61786"><a href="/about-ap/start-grow-ap/grow-ap/ap-potential">AP Potential</a></li>
+<li class="last leaf menu-mlid-61781"><a href="/about-ap/start-grow-ap/grow-ap/spotlight-on-success">Spotlight on Success</a></li>
+</ul></li>
+<li class="leaf menu-mlid-94456"><a href="/about-ap/start-grow-ap/ap-advocates-program">AP Advocates Program</a></li>
+<li class="expanded menu-mlid-94461 cb-nested"><a href="/about-ap/start-grow-ap/access-initiatives">Access Initiatives</a><ul class="menu"><li class="first leaf menu-mlid-94466"><a href="/about-ap/start-grow-ap/access-initiatives/ap-opportunity-program">AP Opportunity Program</a></li>
+<li class="last leaf menu-mlid-94471"><a href="/about-ap/start-grow-ap/access-initiatives/ap-stem-access-program">AP STEM Access Program</a></li>
+</ul></li>
+<li class="last leaf menu-mlid-61791"><a href="/about-ap/start-grow-ap/outreach-support-resources">Outreach and Support Resources</a></li>
+</ul></li>
+<li class="expanded menu-mlid-95021 cb-nested"><a href="/about-ap/how-ap-develops-courses-and-exams">How AP Develops Courses and Exams</a><ul class="menu"><li class="first leaf menu-mlid-95026"><a href="/about-ap/how-ap-develops-courses-and-exams/course-development" title="">Course Development</a></li>
+<li class="leaf menu-mlid-95031"><a href="/about-ap/how-ap-develops-courses-and-exams/exam-development" title="">Exam Development</a></li>
+<li class="leaf menu-mlid-95036"><a href="/about-ap/how-ap-develops-courses-and-exams/score-setting-and-scoring" title="">Score Setting and Scoring</a></li>
+<li class="last leaf menu-mlid-72741"><a href="/about-ap/how-ap-develops-courses-and-exams/different-versions-exams">Different Versions of Exams</a></li>
+</ul></li>
+<li class="leaf menu-mlid-61646"><a href="/about-ap/ap-data-research">AP Data &amp; Research</a></li>
+<li class="expanded menu-mlid-61651 cb-nested"><a href="/about-ap/awards">AP Awards</a><ul class="menu"><li class="first leaf menu-mlid-61716"><a href="/about-ap/awards/scholar-awards">AP Scholar Awards</a></li>
+<li class="leaf menu-mlid-61726"><a href="/about-ap/awards/international-diploma">AP International Diploma</a></li>
+<li class="last leaf menu-mlid-61721"><a href="/about-ap/awards/district-honor-roll">AP District Honor Roll</a></li>
+</ul></li>
+<li class="last expanded menu-mlid-94476 cb-nested"><a href="/about-ap/news-changes">News &amp; Changes</a><ul class="menu"><li class="first expanded menu-mlid-95731 cb-nested"><a href="/about-ap/news-changes/ap-2019">2019-20 Changes to AP</a><ul class="menu"><li class="first expanded menu-mlid-95751 cb-nested"><a href="/about-ap/news-changes/ap-2019/support-students-new-online-tools">New AP Resources</a><ul class="menu"><li class="first last leaf menu-mlid-95761"><a href="/about-ap/news-changes/ap-2019/coordinator-training-workshops">Coordinator Training Workshops</a></li>
+</ul></li>
+<li class="expanded menu-mlid-95746 cb-nested"><a href="/about-ap/news-changes/ap-2019/whats-new">New AP Processes</a><ul class="menu"><li class="first leaf menu-mlid-95801"><a href="/about-ap/news-changes/ap-2019/new-ap-school-year">New School Year Schedule</a></li>
+<li class="last leaf menu-mlid-95806"><a href="/about-ap/news-changes/ap-2019/outreach-materials">Outreach Materials</a></li>
+</ul></li>
+<li class="last leaf menu-mlid-95766"><a href="/about-ap/news-changes/ap-2019/2019-20-course-updates-index">What AP Teachers Can Expect</a></li>
+</ul></li>
+<li class="leaf menu-mlid-95001"><a href="/about-ap/news-changes/ap-capstone-diploma-program">AP Capstone Diploma Program</a></li>
+<li class="leaf menu-mlid-95006"><a href="/about-ap/news-changes/ap-computer-science-principles">AP Computer Science Principles</a></li>
+<li class="last leaf menu-mlid-94481"><a href="/about-ap/news-changes/collaborations-with-ap" title="">Collaborations with AP</a></li>
+</ul></li>
+</ul></li>
+<li class="expanded menu-mlid-72601 cb-nested dropdown cb-multi"><a href="/courses" class="dropdown-toggle" data-toggle="dropdown" role="button">AP Courses &amp; Exams</a><ul class="menu"><li class="first leaf menu-mlid-85351"><a href="/courses" title="">Course &amp; Exam Pages</a></li>
+<li class="leaf menu-mlid-95736"><a href="/courses/2019-20-course-exam-description-preorder-form">CED Order Form</a></li>
+<li class="expanded menu-mlid-94336 cb-nested"><a href="/courses/collaborations-with-ap">Collaborations with AP</a><ul class="menu"><li class="first leaf menu-mlid-94346"><a href="/courses/collaborations-with-ap/ap-project-lead-the-way">AP + Project Lead The Way</a></li>
+<li class="expanded menu-mlid-94341 cb-nested"><a href="/courses/collaborations-with-ap/ap-we-service">AP with WE Service</a><ul class="menu"><li class="first leaf menu-mlid-94351"><a href="/courses/collaborations-with-ap/ap-we-service/how-it-works">How It Works</a></li>
+<li class="leaf menu-mlid-92011"><a href="/courses/collaborations-with-ap/ap-we-service/participate">Participate in the Program</a></li>
+<li class="last expanded menu-mlid-94356 cb-nested"><a href="/courses/collaborations-with-ap/ap-we-service/teacher-resources">Teaching AP with WE Service</a><ul class="menu"><li class="first leaf menu-mlid-95586"><a href="/courses/collaborations-with-ap/ap-we-service/teacher-resources/teaching-modules">Teaching Modules</a></li>
+<li class="leaf menu-mlid-95591"><a href="/courses/collaborations-with-ap/ap-we-service/teacher-resources/teacher-videos">Teacher Videos</a></li>
+<li class="leaf menu-mlid-95601"><a href="/courses/collaborations-with-ap/ap-we-service/teacher-resources/professional-development">Professional Development</a></li>
+<li class="last leaf menu-mlid-95606"><a href="/courses/collaborations-with-ap/ap-we-service/teacher-resources/toolkit">Communications Toolkit</a></li>
+</ul></li>
+</ul></li>
+<li class="expanded menu-mlid-94361 cb-nested"><a href="/courses/collaborations-with-ap/ap-digital-edge">AP Digital Edge</a><ul class="menu"><li class="first expanded menu-mlid-94366 cb-nested"><a href="/courses/collaborations-with-ap/ap-digital-edge/how-ap-digital-edge-works" title="">How AP Digital Edge Works</a><ul class="menu"><li class="first leaf menu-mlid-94371"><a href="/courses/collaborations-with-ap/ap-digital-edge/how-ap-digital-edge-works/ap-course" title="">The AP Course</a></li>
+<li class="leaf menu-mlid-94376"><a href="/courses/collaborations-with-ap/ap-digital-edge/how-ap-digital-edge-works/cape-skills-curriculum" title="">The CAPE Skills Curriculum</a></li>
+<li class="leaf menu-mlid-94381"><a href="/courses/collaborations-with-ap/ap-digital-edge/how-ap-digital-edge-works/digital-edge-activities" title="">The AP Digital Edge Activities</a></li>
+<li class="leaf menu-mlid-94386"><a href="/courses/collaborations-with-ap/ap-digital-edge/how-ap-digital-edge-works/teacher-training-resources" title="">Teacher Training and Resources</a></li>
+<li class="last leaf menu-mlid-94391"><a href="/courses/collaborations-with-ap/ap-digital-edge/how-ap-digital-edge-works/industry-certification" title="">Industry Certification</a></li>
+</ul></li>
+<li class="leaf menu-mlid-94396"><a href="/courses/collaborations-with-ap/ap-digital-edge/benefits" title="">Benefits</a></li>
+<li class="expanded menu-mlid-94401 cb-nested"><a href="/courses/collaborations-with-ap/ap-digital-edge/courses" title="">The AP Courses</a><ul class="menu"><li class="first leaf menu-mlid-94406"><a href="/courses/collaborations-with-ap/ap-digital-edge/courses/ap-computer-science-a" title="">AP Computer Science A</a></li>
+<li class="leaf menu-mlid-94411"><a href="/courses/collaborations-with-ap/ap-digital-edge/courses/ap-english-language-and-composition" title="">AP English Language and Composition</a></li>
+<li class="leaf menu-mlid-94416"><a href="/courses/collaborations-with-ap/ap-digital-edge/courses/ap-microeconomics" title="">AP Microeconomics</a></li>
+<li class="last leaf menu-mlid-94421"><a href="/courses/collaborations-with-ap/ap-digital-edge/courses/ap-studio-art-2d-design" title="">AP Studio Art: 2-D Design</a></li>
+</ul></li>
+<li class="last expanded menu-mlid-94426 cb-nested"><a href="/courses/collaborations-with-ap/ap-digital-edge/resources" title="">Teacher &amp; Student Resources</a><ul class="menu"><li class="first leaf menu-mlid-94431"><a href="/courses/collaborations-with-ap/ap-digital-edge/resources/ap-computer-science-a" title="">AP Computer Science A Teacher and Student Resources</a></li>
+<li class="leaf menu-mlid-94436"><a href="/courses/collaborations-with-ap/ap-digital-edge/resources/ap-english-language-and-composition" title="">AP English Language and Composition Teacher and Student Resources</a></li>
+<li class="leaf menu-mlid-94441"><a href="/courses/collaborations-with-ap/ap-digital-edge/resources/ap-microeconomics" title="">AP Microeconomics Teacher and Student Resources</a></li>
+<li class="last leaf menu-mlid-94446"><a href="/courses/collaborations-with-ap/ap-digital-edge/resources/ap-studio-art-2d-design" title="">AP Studio Art: 2-D Design Teacher and Student Resources</a></li>
+</ul></li>
+</ul></li>
+<li class="last leaf menu-mlid-95701"><a href="/courses/collaborations-with-ap/national-examinations-world-languages">National Examinations in World Languages</a></li>
+</ul></li>
+<li class="expanded menu-mlid-72736 cb-nested"><a href="/courses/exam-dates-and-fees">Exam Dates &amp; Fees</a><ul class="menu"><li class="first leaf menu-mlid-72746"><a href="/courses/exam-dates-and-fees/late-testing-dates">2019 Late-Testing Dates</a></li>
+<li class="leaf menu-mlid-95696"><a href="/courses/exam-dates-and-fees/exam-dates-2020">2020 Exam Dates and Fees</a></li>
+<li class="last leaf menu-mlid-95691"><a href="/courses/exam-dates-and-fees/late-testing-dates-2020">2020 Late-Testing Dates</a></li>
+</ul></li>
+<li class="last expanded menu-mlid-92371 cb-nested"><a href="/courses/ap-course-audit">AP Course Audit</a><ul class="menu"><li class="first expanded menu-mlid-88146 cb-nested"><a href="/courses/ap-course-audit/about">About AP Course Audit</a><ul class="menu"><li class="first last leaf menu-mlid-92366"><a href="/courses/ap-course-audit/about/course-authorizations">Course Authorizations</a></li>
+</ul></li>
+<li class="expanded menu-mlid-92381 cb-nested"><a href="/courses/ap-course-audit/explore-by-role">Explore by Role</a><ul class="menu"><li class="first leaf menu-mlid-92376"><a href="/courses/ap-course-audit/explore-by-role/teachers">For Teachers</a></li>
+<li class="leaf menu-mlid-92386"><a href="/courses/ap-course-audit/explore-by-role/school-administrators">For Administrators</a></li>
+<li class="leaf menu-mlid-92391"><a href="/courses/ap-course-audit/explore-by-role/online-distance-learning-providers">For Online Providers</a></li>
+<li class="last leaf menu-mlid-95926"><a href="/courses/ap-course-audit/explore-by-role/homeschool-providers-ap-courses">Homeschool Providers of AP Courses</a></li>
+</ul></li>
+<li class="leaf menu-mlid-92411"><a href="/courses/ap-course-audit/explore-by-course">Explore by Course</a></li>
+<li class="leaf menu-mlid-92401"><a href="/courses/ap-course-audit/contact-us">Contact</a></li>
+<li class="leaf menu-mlid-92396"><a href="/courses/ap-course-audit/calendar">Calendar</a></li>
+<li class="last leaf menu-mlid-92406"><a href="/courses/ap-course-audit/faqs">FAQs</a></li>
+</ul></li>
+</ul></li>
+<li class="expanded menu-mlid-61641 cb-nested dropdown"><a href="/scores" class="dropdown-toggle" data-toggle="dropdown" role="button">AP Scores</a><ul class="menu"><li class="first leaf menu-mlid-95091"><a href="/scores" title="">Overview</a></li>
+<li class="expanded menu-mlid-61656 cb-nested"><a href="/scores/access-delivery">Access &amp; Delivery</a><ul class="menu"><li class="first expanded menu-mlid-61661 cb-nested"><a href="/scores/access-delivery/how-and-when-to-access">How &amp; When to Access</a><ul class="menu"><li class="first last leaf menu-mlid-75371"><a href="/scores/access-delivery/how-and-when-to-access/scores-access-schedule">AP Score Report Access Schedule</a></li>
+</ul></li>
+<li class="leaf menu-mlid-61666"><a href="/scores/access-delivery/helping-students">Helping Students</a></li>
+<li class="last expanded menu-mlid-61671 cb-nested"><a href="/scores/access-delivery/college-services">Delivery for Colleges</a><ul class="menu"><li class="first last leaf menu-mlid-61676"><a href="/scores/access-delivery/college-services/data-discs">Data Discs</a></li>
+</ul></li>
+</ul></li>
+<li class="expanded menu-mlid-72871 cb-nested"><a href="/scores/available-reports">Available Reports</a><ul class="menu"><li class="first leaf menu-mlid-61681"><a href="/scores/available-reports/report-descriptions">Report Descriptions</a></li>
+<li class="leaf menu-mlid-61691"><a href="/scores/available-reports/instructional-planning">Instructional Planning Reports</a></li>
+<li class="last leaf menu-mlid-61696"><a href="/scores/available-reports/student-datafile">Student Datafile</a></li>
+</ul></li>
+<li class="last expanded menu-mlid-61686 cb-nested"><a href="/scores/instructions-tips">Instructions &amp; Tips</a><ul class="menu"><li class="first leaf menu-mlid-61701"><a href="/scores/instructions-tips/class-sections">Class Sections</a></li>
+<li class="leaf menu-mlid-61706"><a href="/scores/instructions-tips/technical-tips">Technical Tips</a></li>
+<li class="last leaf menu-mlid-61711"><a href="/scores/instructions-tips/administrator-tools">Administrator Tools</a></li>
+</ul></li>
+</ul></li>
+<li class="expanded menu-mlid-61601 cb-nested dropdown cb-multi"><a href="/professional-development" class="dropdown-toggle" data-toggle="dropdown" role="button">Professional Development</a><ul class="menu"><li class="first leaf menu-mlid-88756"><a href="/professional-development" title="">Overview</a></li>
+<li class="leaf menu-mlid-61606"><a href="/professional-development/teaching-ap-first-time">Teaching AP for the First Time?</a></li>
+<li class="expanded menu-mlid-61611 cb-nested"><a href="/professional-development/workshops-summer-institutes">Workshops &amp; Summer Institutes</a><ul class="menu"><li class="first collapsed menu-mlid-61616 cb-nested"><a href="/professional-development/workshops-summer-institutes/about-workshops">About AP Workshops</a></li>
+<li class="expanded menu-mlid-93956 cb-nested"><a href="/professional-development/workshops-summer-institutes/about-summer-institutes">About AP Summer Institutes</a><ul class="menu"><li class="first last leaf menu-mlid-93961"><a href="/professional-development/workshops-summer-institutes/about-summer-institutes/apply">Host an AP Summer Institute</a></li>
+</ul></li>
+<li class="expanded menu-mlid-62156 cb-nested"><a href="/professional-development/workshops-summer-institutes/descriptions">Browse By Subject</a><ul class="menu"><li class="first leaf menu-mlid-62166"><a href="/professional-development/workshops-summer-institutes/capstone">AP Capstone</a></li>
+<li class="leaf menu-mlid-95816"><a href="/professional-development/workshops-summer-institutes/ap-subject-workshops">AP Subject Workshops</a></li>
+<li class="leaf menu-mlid-62611"><a href="/professional-development/workshops-summer-institutes/ap-coordinators">Coordinators</a></li>
+<li class="last leaf menu-mlid-62621"><a href="/professional-development/workshops-summer-institutes/school-leaders/administrators">School Leaders</a></li>
+</ul></li>
+<li class="leaf menu-mlid-62146"><a href="/professional-development/workshops-summer-institutes/fees-deadlines">Fees &amp; Deadlines</a></li>
+<li class="last leaf menu-mlid-62151"><a href="/professional-development/workshops-summer-institutes/summer-institute-scholarships">Scholarships &amp; FAQs</a></li>
+</ul></li>
+<li class="expanded menu-mlid-61631 cb-nested"><a href="/professional-development/online-pd">Online Professional Development</a><ul class="menu"><li class="first last leaf menu-mlid-62161"><a href="/professional-development/online-pd/teaching-modules">Teaching &amp; Assessing Modules</a></li>
+</ul></li>
+<li class="expanded menu-mlid-62656 cb-nested"><a href="/professional-development/enroll-in-ap-mentoring">Enroll in AP Mentoring</a><ul class="menu"><li class="first leaf menu-mlid-93991"><a href="/professional-development/enroll-in-ap-mentoring/apsi-and-ap-mentoring">AP Summer Institutes and AP Mentoring Full-Year</a></li>
+<li class="last leaf menu-mlid-94231"><a href="/professional-development/enroll-in-ap-mentoring/implementing-ap-mentoring-your-school-or-district">Implementing AP Mentoring in Your School or District</a></li>
+</ul></li>
+<li class="leaf menu-mlid-67761"><a href="/professional-development/become-an-ap-reader" title="">Become an AP Reader</a></li>
+<li class="collapsed menu-mlid-61621 cb-nested"><a href="/professional-development/workshop-consultant">Become an AP Workshop Consultant</a></li>
+<li class="leaf menu-mlid-88131"><a href="/professional-development/careers-in-ap">Career Opportunities in AP</a></li>
+<li class="leaf menu-mlid-64051"><a href="/professional-development/discover-ap-insight">AP Insight</a></li>
+<li class="last leaf menu-mlid-64046"><a href="/professional-development/ap-teacher-community">AP Teacher Community</a></li>
+</ul></li>
+<li class="last expanded menu-mlid-61806 cb-nested dropdown cb-multi"><a href="/ap-coordinators" class="dropdown-toggle" data-toggle="dropdown" role="button">AP Coordinators</a><ul class="menu"><li class="first leaf menu-mlid-88766"><a href="/ap-coordinators" title="">Overview</a></li>
+<li class="leaf menu-mlid-61811"><a href="/ap-coordinators/important-changes">Important Changes</a></li>
+<li class="leaf menu-mlid-61816"><a href="/ap-coordinators/calendar-deadlines">Annual Calendar &amp; Deadlines</a></li>
+<li class="expanded menu-mlid-61821 cb-nested"><a href="/ap-coordinators/exam-ordering-fees">Exam Ordering &amp; Fees</a><ul class="menu"><li class="first expanded menu-mlid-61826 cb-nested"><a href="/ap-coordinators/exam-ordering-fees/exam-fees">Exam Fees</a><ul class="menu"><li class="first leaf menu-mlid-61831"><a href="/ap-coordinators/exam-ordering-fees/exam-fees/reductions">AP Exam Fee Reductions</a></li>
+<li class="last leaf menu-mlid-61836"><a href="/ap-coordinators/exam-ordering-fees/exam-fees/federal-state-assistance">Federal &amp; State Assistance</a></li>
+</ul></li>
+<li class="expanded menu-mlid-61841 cb-nested"><a href="/ap-coordinators/exam-ordering-fees/ordering-materials">Ordering Exam Materials</a><ul class="menu"><li class="first leaf menu-mlid-88846"><a href="/ap-coordinators/exam-ordering-fees/ordering-materials/ordering-help">Ordering Help</a></li>
+<li class="last leaf menu-mlid-61846"><a href="/ap-coordinators/exam-ordering-fees/ordering-materials/home-schooled-students">Homeschooled Students</a></li>
+</ul></li>
+<li class="last leaf menu-mlid-61851"><a href="/ap-coordinators/exam-ordering-fees/late-testing">Late-Testing Policies</a></li>
+</ul></li>
+<li class="expanded menu-mlid-61861 cb-nested"><a href="/ap-coordinators/preparing-exam-day">Preparing for Exam Day</a><ul class="menu"><li class="first leaf menu-mlid-61866"><a href="/ap-coordinators/preparing-exam-day/exam-security">Exam Security</a></li>
+<li class="leaf menu-mlid-61871"><a href="/ap-coordinators/preparing-exam-day/seating-charts">Seating Policy and Seating Charts</a></li>
+<li class="leaf menu-mlid-61876"><a href="/ap-coordinators/preparing-exam-day/off-site-testing">Off-Site Testing</a></li>
+<li class="leaf menu-mlid-61881"><a href="/ap-coordinators/preparing-exam-day/proctors">Choosing &amp; Preparing Proctors</a></li>
+<li class="leaf menu-mlid-61886"><a href="/ap-coordinators/preparing-exam-day/preadministration">Preadministration Session</a></li>
+<li class="leaf menu-mlid-61891"><a href="/ap-coordinators/preparing-exam-day/accommodations">Accommodations for AP Exams</a></li>
+<li class="last leaf menu-mlid-61896"><a href="/ap-coordinators/preparing-exam-day/third-party-services">Third-Party Services</a></li>
+</ul></li>
+<li class="expanded menu-mlid-61901 cb-nested"><a href="/ap-coordinators/exams-special-prep">Exams Requiring Special Prep</a><ul class="menu"><li class="first leaf menu-mlid-61906"><a href="/ap-coordinators/exams-special-prep/language">World Language &amp; Culture Exams</a></li>
+<li class="leaf menu-mlid-61911"><a href="/ap-coordinators/exams-special-prep/music">Music Theory Exam</a></li>
+<li class="expanded menu-mlid-61916 cb-nested"><a href="/ap-coordinators/exams-special-prep/studio-art">Studio Art</a><ul class="menu"><li class="first expanded menu-mlid-61921 cb-nested"><a href="/series/studio-art-submission-demo-ap-coordinators">AP Coordinator Submission Demo</a><ul class="menu"><li class="first leaf menu-mlid-61961"><a href="/series/studio-art-submission-demo-ap-coordinators/set-up-access">Set Up Access</a></li>
+<li class="leaf menu-mlid-61981"><a href="/series/studio-art-submission-demo-ap-coordinators/update-school">Update School Information</a></li>
+<li class="leaf menu-mlid-61926"><a href="/series/studio-art-submission-demo-ap-coordinators/info-to-teachers">Access to Teachers</a></li>
+<li class="leaf menu-mlid-61991"><a href="/series/studio-art-submission-demo-ap-coordinators/home-page">Your Home Page</a></li>
+<li class="leaf menu-mlid-61946"><a href="/series/studio-art-submission-demo-ap-coordinators/portfolio-status">Portfolio Status</a></li>
+<li class="leaf menu-mlid-61936"><a href="/series/studio-art-submission-demo-ap-coordinators/class-sections">Class Sections</a></li>
+<li class="leaf menu-mlid-61956"><a href="/series/studio-art-submission-demo-ap-coordinators/fee-reduction">Set Fee Reductions</a></li>
+<li class="leaf menu-mlid-61941"><a href="/series/studio-art-submission-demo-ap-coordinators/portfolio-counts">Portfolio Counts</a></li>
+<li class="leaf menu-mlid-61931"><a href="/series/studio-art-submission-demo-ap-coordinators/account-info">Account Information</a></li>
+<li class="leaf menu-mlid-61976"><a href="/series/studio-art-submission-demo-ap-coordinators/teacher-summary">Teacher Summary</a></li>
+<li class="leaf menu-mlid-61986"><a href="/series/studio-art-submission-demo-ap-coordinators/view-portfolios">View Portfolios</a></li>
+<li class="leaf menu-mlid-61971"><a href="/series/studio-art-submission-demo-ap-coordinators/take-action">Taking Action</a></li>
+<li class="leaf menu-mlid-61951"><a href="/series/studio-art-submission-demo-ap-coordinators/return-portfolios">Return a Portfolio</a></li>
+<li class="last leaf menu-mlid-61966"><a href="/series/studio-art-submission-demo-ap-coordinators/submit-portfolios">Submit Portfolios</a></li>
+</ul></li>
+<li class="expanded menu-mlid-62066 cb-nested"><a href="/series/studio-art-submission-demo-ap-teachers">AP Teacher Submission Demo</a><ul class="menu"><li class="first leaf menu-mlid-62111"><a href="/series/studio-art-submission-demo-ap-teachers/set-up-access">Set Up Access</a></li>
+<li class="leaf menu-mlid-62121"><a href="/series/studio-art-submission-demo-ap-teachers/update-school">Update School Information</a></li>
+<li class="leaf menu-mlid-62071"><a href="/series/studio-art-submission-demo-ap-teachers/info-to-students">Access to Students</a></li>
+<li class="leaf menu-mlid-62131"><a href="/series/studio-art-submission-demo-ap-teachers/home-page">Your Home Page</a></li>
+<li class="leaf menu-mlid-62101"><a href="/series/studio-art-submission-demo-ap-teachers/portfolio-status">Portfolio Status</a></li>
+<li class="leaf menu-mlid-62086"><a href="/series/studio-art-submission-demo-ap-teachers/class-sections">Class Sections</a></li>
+<li class="leaf menu-mlid-62096"><a href="/series/studio-art-submission-demo-ap-teachers/portfolio-counts">Portfolio Counts</a></li>
+<li class="leaf menu-mlid-62076"><a href="/series/studio-art-submission-demo-ap-teachers/account-info">Account Information</a></li>
+<li class="leaf menu-mlid-62126"><a href="/series/studio-art-submission-demo-ap-teachers/view-portfolios">View Portfolio</a></li>
+<li class="leaf menu-mlid-62116"><a href="/series/studio-art-submission-demo-ap-teachers/take-action">Taking Action</a></li>
+<li class="leaf menu-mlid-62106"><a href="/series/studio-art-submission-demo-ap-teachers/return-portfolio">Return Portfolio</a></li>
+<li class="leaf menu-mlid-62091"><a href="/series/studio-art-submission-demo-ap-teachers/forward-portfolio">Forward Portfolio</a></li>
+<li class="last leaf menu-mlid-62081"><a href="/series/studio-art-submission-demo-ap-teachers/after-forwarding">After Forwarding</a></li>
+</ul></li>
+<li class="last leaf menu-mlid-62136"><a href="/ap-coordinators/exams-special-prep/studio-art/timeline-coordinators">AP Coordinator Timeline</a></li>
+</ul></li>
+<li class="leaf menu-mlid-61996"><a href="/ap-coordinators/exams-special-prep/capstone">AP Capstone Diploma Program</a></li>
+<li class="leaf menu-mlid-62001"><a href="/ap-coordinators/exams-special-prep/computer-science-principles">Computer Science Principles</a></li>
+<li class="expanded menu-mlid-62006 cb-nested"><a href="/ap-coordinators/exams-special-prep/recording-audio">Recording Audio</a><ul class="menu"><li class="first leaf menu-mlid-81021"><a href="/ap-coordinators/exams-special-prep/recording-audio/computer">Recording Using a Computer</a></li>
+<li class="leaf menu-mlid-81026"><a href="/ap-coordinators/exams-special-prep/recording-audio/handheld-digital-recorder">Recording Using Digital Recording Devices</a></li>
+<li class="leaf menu-mlid-81031"><a href="/ap-coordinators/exams-special-prep/recording-audio/digital-language-lab" title="">Recording Using a Digital Language Lab</a></li>
+<li class="last leaf menu-mlid-81036"><a href="/ap-coordinators/exams-special-prep/recording-audio/digital-audio-capture-app">Recording Using the DAC App</a></li>
+</ul></li>
+<li class="last leaf menu-mlid-62011"><a href="/ap-coordinators/exams-special-prep/submitting-audio">Submitting Audio</a></li>
+</ul></li>
+<li class="expanded menu-mlid-62016 cb-nested"><a href="/ap-coordinators/on-exam-day">On Exam Day</a><ul class="menu"><li class="first leaf menu-mlid-62021"><a href="/ap-coordinators/on-exam-day/proctor-duties">Proctor Duties</a></li>
+<li class="last leaf menu-mlid-62026"><a href="/ap-coordinators/on-exam-day/what-students-can-cannot-bring">What Students Can &amp; Cannot Bring</a></li>
+</ul></li>
+<li class="expanded menu-mlid-62041 cb-nested"><a href="/ap-coordinators/after-exams">After the Exams</a><ul class="menu"><li class="first leaf menu-mlid-62046"><a href="/ap-coordinators/after-exams/returning-exams">Returning AP Exams</a></li>
+<li class="leaf menu-mlid-62051"><a href="/ap-coordinators/after-exams/ordering-labels-booklets">Ordering Score Labels &amp; Booklets</a></li>
+<li class="last leaf menu-mlid-95921"><a href="/ap-coordinators/accessing-and-paying-your-invoice">Accessing and Paying Your Invoice</a></li>
+</ul></li>
+<li class="expanded menu-mlid-62056 cb-nested"><a href="/ap-coordinators/resource-library">Resource Library</a></li>
+<li class="leaf menu-mlid-88136"><a href="/ap-coordinators/comment-form">AP Coordinator Comment Form</a></li>
+<li class="last leaf menu-mlid-61801"><a href="/ap-coordinators/administer-exam">Administer the AP Exam Internationally</a></li>
+</ul></li>
+</ul></div></div></nav></div></div></div>
+  </div>
+</div>
+  </div>
+    </nav>
+  </div>
+
+
+
+  <div class="region region-branding">
+    <div id="block-cb-hero-welcome-mat" class="block block-cb-hero">
+
+    
+  <div class="content">
+    
+<div class="cb-welcome-mat cb-wm-standard cb-wm-center" >
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 flex-block">
+        <div class="content">
+                                <h1><span class="course-name">AP COMPUTER SCIENCE A</span>The Exam</h1>
+                            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+<div id="block-cb-article-apc-fields-course-menu-bar" class="block block-cb-article-apc-fields">
+
+    
+  <div class="content">
+    
+<div class="cb-menu-bar">
+  <nav aria-label="CB Menu bar" class="cb-desktop-menu-bar container">
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="menu"><li class="first "><a href="/courses/ap-computer-science-a?course=ap-computer-science-a" title="">Home</a></li>
+<li class="collapsed"><a href="/courses/ap-computer-science-a/course" title="">The Course</a></li>
+<li class=""><a href="/courses/ap-computer-science-a/course-audit" title="">Course Audit</a></li>
+<li class="collapsed"><a href="/courses/ap-computer-science-a/classroom-resources" title="">Classroom Resources</a></li>
+<li class="collapsed"><a href="/courses/ap-computer-science-a/exam" title="" class="active">The Exam</a></li>
+<li class="last "><a href="/courses/ap-computer-science-a/professional-development" title="">Professional Development</a></li>
+</ul>      </div>
+    </div>
+  </nav>
+</div>
+
+  </div>
+</div>
+<div id="block-cb-highlighted-transaction-htm-band" class="block block-cb-highlighted-transaction">
+
+    
+  <div class="content">
+    <div  class="ds-1col node node-article view-mode-htm_band clearfix">
+
+  
+  </div>
+
+  </div>
+</div>
+  </div>
+
+
+  <div id="content-wrapper">
+
+    <div class="content-wrapper-container container">
+
+      
+      <nav role="navigation" aria-label="breadcrumbs"><div class="item-list"><ol class="breadcrumb"><li class="first"><a href="/" class="no-purl">AP Central</a></li>
+<li><a href="/courses" class="no-purl">AP Courses &amp; Exams</a></li>
+<li><a href="/courses/ap-computer-science-a?course=ap-computer-science-a">AP Computer Science A</a></li>
+<li class="last"><span class="sr-only">Active Page: </span><span>The Exam</span></li>
+</ol></div></nav>      <div class="row">
+
+
+                  <div id="sidebar-left"
+               class="col-lg-2 col-md-2 col-sm-12">
+
+                                    
+          </div>
+        
+        
+          <div id="main-content" tabindex="-1" role="main"
+               class="col-lg-8 col-md-8 col-sm-12">
+
+            
+            <a id="top" class="sr-only">beginning of content:</a>
+
+                        
+                        
+                          <div class="tabs"></div>
+                        
+            <div id="content-region" class="">  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div  class="ds-1col node node-article view-mode-full clearfix">
+
+  
+  <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><div>
+	<div class="panel cb-panel-blue">
+		<div class="panel-heading">
+			<h3 class="panel-title">Important Updates</h3>
+		</div>
+
+		<div class="panel-body">
+			<h4>Preparing Students for the Exam</h4>
+
+			<p>Starting August 1, students and teachers will have new resources and a daily support tool called AP Classroom to use throughout the year. Designed and tested in collaboration with AP teachers, these resources include unit guides that cover the content and skills assessed on the exam, progress checks and a dashboard to highlight strengths and opportunities for growth, and a question bank of real AP questions.</p>
+
+			<p><a href="https://apcentral.collegeboard.org/about-ap/news-changes/ap-2019/support-students-new-online-tools">Learn more about the new resources</a>
+		</p></div>
+	</div>
+	<!--	<div>
+		<div class="panel cb-panel-blue">
+			<div class="panel-heading">
+				<h3 class="panel-title">Important Updates</h3>
+			</div>
+
+			<div class="panel-body">
+				<p><strong>Free 2015 Exam for Classroom Use</strong><br>
+					An AP Computer Science A Exam administered in 2015 is available through your <a href="https://account.collegeboard.org/login/login?appId=205">AP Course Audit account</a>, along with an answer key, scoring notes, and a scoring worksheet.</p>
+			</div>
+		</div>
+	</div> --></div>
+</div></div></div><div class="node node-free-form-text view-mode-rich_list" >
+      <div class="cb-fft-2-col">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+                                                  <div class="col-sm-12"><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><h2>Exam Overview</h2>
+</div></div></div></div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="node node-free-form-text view-mode-rich_list" >
+      <div class="cb-fft-2-col">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+                                                  <div class="col-sm-12"><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Exam questions assess the course concepts and skills outlined in the course framework. For more information on exam weighting, download the <a href="/pdf/ap-computer-science-a-course-and-exam-description-0.pdf?course=ap-computer-science-a" target="_blank"><em>AP Computer Science A Course and Exam Description</em></a>. The updated <a href="/pdf/ap-computer-science-a-java-quick-reference.pdf" target="_blank">Java Quick Reference </a>(.pdf/358KB) for the 2020 exam lists the accessible methods from the Java library that may be included on the exam. The Java Quick Reference is included in the exam booklet.</p>
+
+<div>
+	<div id="_com_1" language="JavaScript" onmouseout="msoCommentHide('_com_1')" onmouseover="msoCommentShow('_anchor_1','_com_1')">
+		<p>Encourage your students to visit the <a href="https://apstudent.collegeboard.org/apcourse/ap-computer-science-a">AP Computer Science A student page</a> for exam information and exam practice.</p>
+
+		<div>
+			<div class="msocomtxt" id="_com_1" language="JavaScript" onmouseout="msoCommentHide('_com_1')" onmouseover="msoCommentShow('_anchor_1','_com_1')"> </div>
+		</div>
+	</div>
+</div>
+</div></div></div></div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="node node-document-list view-mode-rich_list">
+
+    <div class="cb-item-list cb-item-list-rich">
+           
+      
+              <ul>
+          <li class="cb-type-event">
+      <div class="cb-item-icon">
+      <span class="cb-glyph cb-glyph-circular cb-cal-full" aria-hidden="true"></span>
+      <span class="cb-item-type">Event</span>
+    </div>
+          <ul class="cb-item-date">
+        <li>Fri, May 8, 2020</li>
+      </ul>
+        <div class="cb-item-text">
+      <p class="cb-item-title">AP Computer Science A Exam Day</p>
+          </div>
+    <ul class="cb-item-meta">
+                    <li>Noon | 3 hrs</li>
+          </ul>
+    </li>
+        </ul>
+            </div>
+</div>
+<div class="node node-free-form-text view-mode-rich_list" >
+      <div class="cb-fft-2-col">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+                                                  <div class="col-sm-12"><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><h2>Exam Format</h2>
+</div></div></div></div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="node node-document-list view-mode-rich_list">
+
+    <div class="cb-item-list cb-item-list-rich">
+           
+              <div class="cb-resource-desc">
+          <p>The AP Computer Science A Exam will continue to have consistent question types, weighting, and scoring guidelines every year, so you and your students know what to expect on exam day. The overall format of the exam—including the weighting, timing, and number of questions in each exam section—won’t change.</p>
+        </div>
+      
+            </div>
+</div>
+<div class="node node-free-form-text view-mode-rich_list" >
+      <div class="cb-fft-2-col">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+                                                  <div class="col-sm-12"><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><h2>Section 1: Multiple Choice </h2>
+
+<p>40 Questions | 1 Hour 30 Minutes | 50% of Exam Score</p>
+
+<ul><li>
+		<p>The multiple-choice section includes mostly individual questions, with 1–2 sets of questions (typically 2–3 questions per set).</p>
+	</li>
+	<li>Computational Thinking Practices 1, 2, 4, and 5 are all assessed in the multiple-choice section.</li>
+</ul></div></div></div></div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="node node-free-form-text view-mode-rich_list" >
+      <div class="cb-fft-2-col">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+                                                  <div class="col-sm-12"><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><h2>Section 2: Free Response</h2>
+
+<p>4 Questions | 1 Hour 30 Minutes | 50% of Exam Score</p>
+
+<ul><li>All free-response questions assess Computational Thinking Practice 3: Code Implementation, with the following focuses:
+		<ul><li>Question 1: Methods and Control Structures—Students will be asked to write program code to create objects of a class and call methods, and satisfy method specifications using expressions, conditional statements, and iterative statements.</li>
+			<li>Question 2: Classes—Students will be asked to write program code to define a new type by creating a class and satisfy method specifications using expressions, conditional statements, and iterative statements.</li>
+			<li>Question 3: Array/ArrayList - Students will be asked to write program code to satisfy method specifications using expressions, conditional statements, and iterative statements and create, traverse, and manipulate elements in 1D array or ArrayList objects. </li>
+			<li>Question 4: 2D Array—Students will be asked to write program code to satisfy method specifications using expressions, conditional statements, and iterative statements and create, traverse, and manipulate elements in 2D array objects.</li>
+		</ul></li>
+</ul><div> 
+	<div>
+		<div id="_com_2" language="JavaScript" onmouseout="msoCommentHide('_com_2')" onmouseover="msoCommentShow('_anchor_2','_com_2')"> </div>
+	</div>
+</div>
+</div></div></div></div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="node node-free-form-text view-mode-rich_list" >
+      <div class="cb-fft-2-col">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+                                                  <div class="col-sm-12"><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><h2>Exam Questions and Scoring Information</h2>
+</div></div></div></div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="node node-free-form-text view-mode-rich_list" >
+      <div class="cb-fft-2-col">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+                                                  <div class="col-sm-12"><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>For free-response questions (FRQs) from the 2019 exam, along with scoring information, check out the table below.</p>
+
+<p>Be sure to review the Chief Reader Report. In this invaluable resource, the chief reader of the AP Exam compiles feedback from members of the AP Reading leadership to explain how students performed on the FRQs, summarize typical student errors, and address specific concepts and content with which students have struggled the most that year.</p>
+</div></div></div></div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="node node-free-form-text view-mode-rich_list" >
+      <div class="cb-fft-2-col">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+                                                  <div class="col-sm-12"><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><h4>New Exam Resources</h4>
+</div></div></div></div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="node node-free-form-text view-mode-rich_list" >
+      <div class="cb-fft-2-col">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+                                                  <div class="col-sm-12"><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Beginning in August 2019, you’ll have access to the full range of questions from past exams in AP Classroom. You'll have access to: </p>
+
+<ul style="margin-left: 40px;"><li>an online library of AP questions relevant to your course</li>
+	<li>personal progress checks with new formative questions</li>
+	<li>a dashboard to display results from progress checks and provide real-time insights</li>
+</ul></div></div></div></div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="node node-free-form-text view-mode-rich_list" >
+      <div class="cb-fft-2-col">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+                                                  <div class="col-sm-12"><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><h2>2019: Free-Response Questions</h2>
+</div></div></div></div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="node node-free-form-text view-mode-rich_list" >
+      <div class="cb-fft-2-col">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+                                                  <div class="col-sm-12"><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>The <a href="/pdf/ap-computer-science-a-java-quick-reference.pdf" target="_blank" title="[Opens in New Window] ">Java Quick Reference</a> (.pdf/358KB) lists the accessible methods from the Java library that may be included on the exam. The Java Quick Reference is included in the exam booklet.</p>
+
+<div> </div>
+</div></div></div></div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="node node-free-form-text view-mode-rich_list" >
+      <div class="cb-fft-2-col">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+                                                  <div class="col-sm-12"><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><div class="panel-collapse collapse in" role="tabpanel">
+	<div class="panel-body">
+		<table class="table"><caption>
+				<h4 style="text-align: left;">2019: Free-Response Questions</h4>
+			</caption>
+			<thead><tr><th class="cb-callout" width="25%">Questions</th>
+					<th class="cb-callout" width="25%">Scoring</th>
+					<th class="cb-callout" width="25%">Samples and Commentary</th>
+					<th class="cb-callout" width="25%">Score Distributions</th>
+				</tr></thead><tbody><tr><td>
+						<p><a href="/pdf/ap19-frq-computer-science-a.pdf" target="_blank">Free-Response Questions</a>
+					</p></td>
+					<td>
+						<p>Coming Soon</p>
+					</td>
+					<td>
+						<p>Coming Soon</p>
+					</td>
+					<td>
+						<p>Coming Soon</p>
+					</td>
+				</tr></tbody></table></div>
+</div>
+</div></div></div></div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="node node-document-list view-mode-rich_list">
+
+    <div class="cb-item-list cb-item-list-rich">
+           
+      
+              <ul>
+          <li class="cb-type-related">
+      <a href="https://apcentral-stg.collegeboard.org/courses/ap-computer-science-a/exam/past-exam-questions" target="_blank">
+      <div class="cb-item-icon">
+      <span class="cb-glyph cb-glyph-circular cb-north-east" aria-hidden="true"></span>
+      <span class="cb-item-type">Related Site</span>
+    </div>
+        <div class="cb-item-text">
+      <p class="cb-item-title">Practice Free-Response Questions</p>
+              <div class="cb-item-des">View free-response questions from 2018 and earlier.</div>
+          </div>
+    <ul class="cb-item-meta">
+              <li>&nbsp;</li>
+                </ul>
+      </a>
+    </li>
+        </ul>
+            </div>
+</div>
+<div class="node node-free-form-text view-mode-rich_list" >
+      <div class="cb-fft-2-col">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+                                                  <div class="col-sm-12"><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><h4>Coming Soon: Scoring Guidelines for CED Sample Free-Response Questions</h4>
+</div></div></div></div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="node node-free-form-text view-mode-rich_list" >
+      <div class="cb-fft-2-col">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+                                                  <div class="col-sm-12"><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Scoring guidelines for the sample exam questions within the AP Computer Science A Course and Exam Description will be posted later this summer.</p>
+</div></div></div></div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="node node-document-list view-mode-rich_list">
+
+    <div class="cb-item-list cb-item-list-rich">
+                   <h3 class="cb-resource-title">Score Reporting</h3>
+      
+      
+              <ul>
+          <li class="cb-type-related">
+      <a href="https://scores.collegeboard.org/pawra/home.action" target="_blank">
+      <div class="cb-item-icon">
+      <span class="cb-glyph cb-glyph-circular cb-north-east" aria-hidden="true"></span>
+      <span class="cb-item-type">Related Site</span>
+    </div>
+        <div class="cb-item-text">
+      <p class="cb-item-title">Online Score Reports</p>
+              <div class="cb-item-des">Access your score reports.</div>
+          </div>
+    <ul class="cb-item-meta">
+              <li>&nbsp;</li>
+                </ul>
+      </a>
+    </li>
+        </ul>
+            </div>
+</div>
+<div class="node node-document-list view-mode-rich_list">
+
+    <div class="cb-item-list cb-item-list-rich">
+                   <h3 class="cb-resource-title">Policies</h3>
+      
+      
+              <ul>
+          <li class="cb-type-related">
+      <a href="https://apcentral.collegeboard.org/ap-coordinators/exam-ordering-fees/late-testing?course=ap-computer-science-a" target="_blank">
+      <div class="cb-item-icon">
+      <span class="cb-glyph cb-glyph-circular cb-north-east" aria-hidden="true"></span>
+      <span class="cb-item-type">Related Site</span>
+    </div>
+        <div class="cb-item-text">
+      <p class="cb-item-title">Late-Testing Policies</p>
+          </div>
+    <ul class="cb-item-meta">
+              <li>&nbsp;</li>
+                </ul>
+      </a>
+    </li>
+<li class="cb-type-related">
+      <a href="https://apcentral.collegeboard.org/courses/exam-dates-and-fees/late-testing-dates?course=ap-computer-science-a" target="_blank">
+      <div class="cb-item-icon">
+      <span class="cb-glyph cb-glyph-circular cb-north-east" aria-hidden="true"></span>
+      <span class="cb-item-type">Related Site</span>
+    </div>
+        <div class="cb-item-text">
+      <p class="cb-item-title">Late-Testing Dates</p>
+          </div>
+    <ul class="cb-item-meta">
+              <li>&nbsp;</li>
+                </ul>
+      </a>
+    </li>
+        </ul>
+            </div>
+</div>
+</div>
+
+  </div>
+</div>
+  </div>
+</div>            
+          </div>
+        
+
+                  <div id="sidebar-right"
+               class="hidden">
+
+                                    
+          </div>
+        
+
+      </div>
+
+      
+    </div>
+  </div>
+  <div class="region region-page-footer">
+    <div id="block-global-header-footer-global-footer-widget" class="block block-global-header-footer">
+
+    
+  <div class="content">
+    <div id="global-footer"></div>  </div>
+</div>
+  </div>
+
+<script type="text/javascript" src="//mango.collegeboard.org/cbmango1/prod/drupal/all/10/all.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery(document).ready(function () { jQuery('a.active').parent().addClass('active'); jQuery('.cb-menu-bar').cbMenuBar(); });
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://apcentral.collegeboard.org/profiles/uwe_profile/modules/custom/global_header_footer/js/global_header.js?prtd22"></script>
+<script type="text/javascript">_satellite.pageBottom();</script>
+</body>
+</html>
