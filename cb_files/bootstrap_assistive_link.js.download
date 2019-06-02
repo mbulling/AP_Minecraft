@@ -1,0 +1,123 @@
+/* Bootstrap Modal opens for links if the url isn't accessible by default.
+ *
+ * 2016-04-05 - Mike Sharkey
+ *
+ */
+(function ($) {
+  'use strict';
+
+  Drupal.behaviors.bootstrapAssistiveLink = {
+    attach: function (context, settings) {
+      var $self;
+      var linkTitle = '';
+      var linkTarget = ' target="_blank" ';
+      var linkHref = '';
+      var $modal;
+      var cookieName = 'noMoreModal';
+      var ourCookie;
+
+      $(document).on('change', '#noMoreModal', function () {
+        $.cookie(cookieName, $(this).prop('checked'), {
+          path: '/',
+          expires: 365
+        });
+      });
+
+      // Set the stuff up when the user clicks a link. Should also work with keyboard accessibility.
+      $('a.bootstrap_assistive_link').on('click keydown', function (e) {
+        // Get the status cookie if they've opted out or not.
+        ourCookie = $.cookie(cookieName);
+
+        // Check if they have opted out first, then move forward.
+        if (typeof ourCookie !== 'undefined' && ourCookie === 'true') {
+          // They opted out, don't do anything.
+        }
+        else {
+          // They have not set the cookie and/or haven't opted out.
+          // If they press Enter or Spacebar or click, show the modal.
+          if (e.keyCode === 0 || e.keyCode === 32 || e.keyCode === 13 || typeof e.keyCode === 'undefined') {
+            e.preventDefault();
+
+            $self = $(this);
+
+            // Grab the text in the link.
+            if ($self.text() !== '' && $self.text() !== null) {
+              linkTitle = $self.text();
+            }
+
+            // If there is a target, get it.
+            if ($self.attr('target') !== '' && $self.attr('target') !== null) {
+              linkTarget = ' target="' + $self.attr('target') + '" ';
+            }
+
+            // If it is an image, grab the alt.
+            if ($self.attr('href') !== '' && $self.attr('href') !== null) {
+              linkHref = $self.attr('href');
+            }
+
+            // Create the modal object that will be put on the page dynamically.
+            $modal = $('<div class="modal custom-modal" role="dialog" aria-hidden="true" tabindex="-1"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span></button><h4 class="modal-title">' + linkTitle + '</h4></div><div class="modal-body"><p>If you are using assistive technology and need help accessing this document in another format, please contact us via this email address:<br><a href="mailto:ssd@info.collegeboard.org">ssd@info.collegeboard.org</a></p><form class="modal-form"><div class="checkbox"><label for="noMoreModal"><input id="noMoreModal" type="checkbox"> Don\'t show me this message again.</label></div></form></div><div class="modal-footer"><button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button><a ' + linkTarget + ' title="Continue to document by clicking this button" class="btn btn-sm btn-primary" href="' + linkHref + '" id="modal-dl-btn">Download</a></div></div></div></div>');
+
+            // Append the modal to the page, hidden.
+            $('body').append($modal);
+
+            // Control elements behavior inside the modal.
+            $modal.on('shown.bs.modal', function (e) {
+              $('.btn-primary', $modal).focus();
+
+              var $close = $('.close', $modal);
+              var $closeBtn = $('.btn-secondary', $modal);
+              var $contactBtn = $('.btn-primary', $modal);
+
+              $close.keydown(function (e) {
+                if (!!cb.apricot.utils.isKey(e, 'TAB') && !e.shiftKey) { //tab
+                  e.preventDefault();
+                  $contactBtn.focus();
+                }
+                if (!!cb.apricot.utils.isKey(e, 'TAB') && e.shiftKey) { //shift & tab
+                  e.preventDefault();
+                  $closeBtn.focus();
+                }
+              });
+
+              $contactBtn.keydown(function (e) {
+                if (!!cb.apricot.utils.isKey(e, 'TAB') && !e.shiftKey) { //tab
+                  e.preventDefault();
+                  $closeBtn.focus();
+                }
+                if (!!cb.apricot.utils.isKey(e, 'TAB') && e.shiftKey) { //shift & tab
+                  e.preventDefault();
+                  $close.focus();
+                }
+              });
+
+              $closeBtn.keydown(function (e) {
+                if (!!cb.apricot.utils.isKey(e, 'TAB') && !e.shiftKey) { //tab
+                  e.preventDefault();
+                  $close.focus();
+                }
+                if (!!cb.apricot.utils.isKey(e, 'TAB') && e.shiftKey) { //shift & tab
+                  e.preventDefault();
+                  $contactBtn.focus();
+                }
+              });
+
+              $contactBtn.on('click', function (e) {
+                $modal.modal('hide');
+              });
+            });
+
+            // Once the modal is closed, set focus back to 'show modal' button.
+            $modal.on('hidden.bs.modal', function (e) {
+              $modal.remove();
+              $self.focus();
+            });
+
+            // Open modal.
+            $modal.modal();
+          }
+        }
+      });
+    }
+  };
+})(jQuery);

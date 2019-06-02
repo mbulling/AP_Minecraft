@@ -1,0 +1,41 @@
+/**
+ * Created by Aimtell Dashboard 2017
+ * Updated by jbeach on 2018-12-30
+ */
+kiwi = window.kiwi || {};
+
+//var ruleName='KIWI: PLR > Pixel - Aimtell > JS Tags';
+//_satellite.notify(ruleName);
+
+//Kiwi Config - Push Sites
+kiwi.PushSites = _satellite.getVar('Kiwi Config - Push Sites');
+
+if (kiwi.PushSites &&
+    kiwi.PushSites[document.location.hostname]) {
+    var _at = {};
+    _at.domain = document.location.hostname;
+    _at.owner = kiwi.PushSites[document.location.hostname].owner;
+    _at.idSite =  kiwi.PushSites[document.location.hostname].idSite;
+    _at.attributes = {};
+    _at.webpushid = kiwi.PushSites[document.location.hostname].webpushid;
+    _at.worker = '/profiles/uwe_profile/libraries/aimtell/aimtell-worker.js.php';
+    (function() {
+        var u='//s3.amazonaws.com/cdn.aimtell.com/trackpush/';
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'trackpush.min.js'; s.parentNode.insertBefore(g,s);
+    })();
+} else {
+    _satellite.notify('Kiwi Config - Push Sites settings not found for this host: ' + document.location.hostname);
+}
+
+/* eslint-disable */
+function _aimtellReady(){
+    if (kiwi &&
+        kiwi.cookie &&
+        kiwi.cookie.sess &&
+        kiwi.cookie.sess.user &&
+        kiwi.cookie.sess.user.gradYear)
+        _aimtellTrackAttributes({'grad_year': kiwi.cookie.sess.user.gradYear});
+}
+/* eslint-enable */
+

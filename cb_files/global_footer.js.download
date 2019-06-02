@@ -1,0 +1,64 @@
+/* global cb */
+(function ($) {
+  'use strict';
+
+  $(function () {
+
+    var isBottomAligned = false;
+    var useControls = true;
+    var footerVersion = '';
+
+    // Default options to old Legacy version, just in case.
+    var options = {
+      placement: {
+        domElement: '#global-footer'
+      },
+      skin: {
+        template: {
+          uri: 'footer.tpl'
+        }
+      }
+    };
+
+    // Let's add some configuration variables for Footer 2.x.
+    // Ensure the Drupal settings exists.
+    if (typeof Drupal.settings.widgets.footer !== 'undefined') {
+      isBottomAligned = Drupal.settings.widgets.footer.isBottomAligned;
+      useControls = Drupal.settings.widgets.footer.useControls;
+    }
+
+    // Check if we have a Footer version number.
+    if (typeof cb.core.widgets.GlobalFooter.VERSION !== 'undefined') {
+      // Get the major version (e.g. 2.x, 3.x, etc.).
+      footerVersion = cb.core.widgets.GlobalFooter.VERSION.charAt(0);
+    }
+
+    // Leaving this as a switch for future version numbers, 2.x, 3.x, etc.
+    switch (footerVersion) {
+      case '2':
+        // 2.x version.
+        options = {
+          placement: {
+            domElement: '#global-footer'
+          },
+          config: {
+            isBottomAligned: isBottomAligned,
+            useControls: useControls
+          }
+        };
+        break;
+
+      /**
+       * Space here to add cases for 3.x, 4.x, etc.
+       */
+
+      default:
+        break;
+
+    }
+
+    // Load the Global Footer.
+    new cb.core.widgets.GlobalFooter(options);
+
+  });
+})(jQuery);

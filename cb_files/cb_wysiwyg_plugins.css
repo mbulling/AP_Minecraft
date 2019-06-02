@@ -1,0 +1,111 @@
+.ckeditor-accordion.panel-group,
+.ckeditor-accordion .panel-body{
+    padding: 0;
+    margin: 0;
+}
+.ckeditor-accordion.panel-group .panel{
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    border-top: 1px solid #e5e2e0;
+    background: transparent;
+}
+.ckeditor-accordion.panel-group.last .panel{
+    border-bottom: 1px solid #e5e2e0;
+}
+.ckeditor-accordion .panel-default>.panel-heading{
+    background: none;
+    border-radius: 0;
+    padding: 18px 0px;
+    position: relative;
+}
+.ckeditor-accordion .panel-heading span.glyphicon-cb{
+    color: #0092d4;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+.ckeditor-accordion .panel-heading span.glyphicon-cb.cb-icon-icn_arrow-up{
+    color: #00539b;
+}
+.ckeditor-accordion .panel-title{
+  padding-right: 30px;
+}
+.ckeditor-accordion .panel-title:hover,
+.ckeditor-accordion .panel-title:focus{
+    color: #0085cf;
+    text-decoration: underline;
+    outline: none;
+}
+.ckeditor-accordion .panel-title{
+  cursor: pointer;
+}
+.ckeditor-accordion .panel-title:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.ckeditor-accordion .collapse.in:focus{
+    outline: none;
+}
+.ckeditor-accordion .panel-body{
+    color: #4c4b4a;
+}
+.ckeditor-accordion.panel-group .panel-heading+.panel-collapse .panel-body{
+    border: none;
+}
+
+/* Wiris Fix for images */
+img.Wirisformula {
+    width: auto;
+}
+
+/* Downloads */
+.doc-download{
+  border-bottom: 1px solid #E7E4E2;
+  clear: both;
+  padding: 10px 0px;
+}
+.doc-download .doc-icon{
+  color: #999896;
+  float: left;
+  font-size: 35px;
+  line-height: 30px;
+  width: 35px;
+}
+.doc-download h3.doc-title{
+  color: #4c4b4a;
+  font-family: "Helvetica Bold",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+.doc-content{
+  margin: 0 0 0 45px;
+}
+.doc-download .doc-desc,
+.doc-download .doc-desc p{
+  color: #4C4B4A;
+  font-family: "Helvetica Regular",Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  margin: 0;
+}
+.doc-download .doc-type,
+.doc-download .doc-size,
+.doc-download .doc-type p,
+.doc-download .doc-size p{
+  color: #4c4b4a;
+  display: inline-block;
+  font-family: "Helvetica Bold",Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  margin: 0;
+}
+.doc-download .doc-type{
+ border-right: 1px solid #4C4B4A;
+ padding-right: 5px;
+}
+.doc-download .doc-size{
+  padding-left: 5px;
+}
+.doc-download p{
+  margin-bottom: 0 !important;
+}

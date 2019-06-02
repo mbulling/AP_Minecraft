@@ -1,0 +1,257 @@
+_satellite.pushAsyncScript(function(event, target, $variables){
+  /* global liveagent */
+/**
+ * Originally Adapted for Kiwi + Adobe Target from Live Agent implementation code + mhalici ARU implementation
+ * by jbeach on 2018-03-05
+ */
+/**
+ * Provided by Dianna Choi, Emad Raza in 2019-02
+ * https://jira.collegeboard.org/browse/WAP-2266
+ * Configured by jbeach on 2019-02-28
+ **/
+kiwi = window.kiwi || {};
+kiwi.liveagent = kiwi.liveagent || {
+    deploy: function(buttonsId, deployId, orgId, initHref, deployHref) {
+        if (buttonsId && deployId && orgId && initHref && deployHref) {           
+            var elSiteFooter = document.getElementById('global-footer'),
+                elKiwiLiveAgent = document.createElement('div'),
+                elStyles = document.createElement('style'),
+                elChatOnline = document.createElement('a'),
+                elChatOnlineImg = document.createElement('img'),
+                elChatOnlineSpan = document.createElement('span'),
+                elChatOffline = document.createElement('a'),
+                elChatOfflineImg = document.createElement('img'),
+                elChatOfflineSpan = document.createElement('span'),          
+                elStylesText = document.createTextNode(''+
+                        '.live-chat {'+
+                            'width: 200px;'+
+                            'height: 0;'+
+                            'position: fixed;'+
+                            'top: 460px;'+
+                            'right: -76px;'+
+                            'background-color: #0077C8;'+
+                            'font-size: 16px;'+
+                            'line-height: 48px;'+
+                            'padding: 0 24px;'+
+                            'transition: height 0.25s ease-out;'+
+                            'z-index: 9999;'+
+                            'display: block;'+
+                            '-ms-transform: rotate(-90deg);'+ /* IE 9 */
+                            '-webkit-transform: rotate(-90deg);'+ /* Safari */
+                            'transform: rotate(-90deg);'+
+                        '}'+
+                        '.live-chat.appear {'+
+                            'height: 48px;'+
+                        '}'+
+                        '.live-chat:hover,'+
+                        '.live-chat:focus {'+
+                            'height: 52px;'+
+                        '}'+
+                        '.live-chat img {'+
+                            'height: 30px;'+
+                        '}'+
+                        '.live-chat span {'+
+                            'padding-left: 16px;'+
+                            'color: #fff;'+
+                            'font-weight: 700;'+
+                        '}'+
+                        '.live-chat.offline {'+
+                            'background-color: #ebe9e6;'+
+                            'height: 48px;'+
+                        '}'+
+                        '.live-chat.offline span {'+
+                            'color: #989795;'+
+                        '}'+
+                        '.live-chat.offline:hover {'+
+                            'text-decoration: none;'+
+                        '}'),
+                elChatOnlineText = document.createTextNode('Live Chat'),
+                elChatOfflineText = document.createTextNode('Live Chat'),
+                elDeployScript = document.createElement('script');
+            elKiwiLiveAgent.id = 'kiwi-live-agent';
+            elChatOnline.id = 'liveagent_button_online_'+buttonsId;
+            elChatOffline.id = 'liveagent_button_offline_'+buttonsId;
+            elChatOnline.setAttribute('class','live-chat');
+            elChatOnline.setAttribute('href','#');
+            elChatOnline.setAttribute('style','display: none; border: 0px none; cursor: pointer;');
+            elChatOnlineImg.setAttribute('src','https://collegereadiness.collegeboard.org/sites/all/modules/custom/ar_live_chat/images/chat_icon.png');
+            elChatOnlineSpan.id = 'liveChat';
+            elChatOfflineImg.setAttribute('src','https://collegereadiness.collegeboard.org/sites/all/modules/custom/ar_live_chat/images/chat_icon.png');
+            elChatOffline.setAttribute('class','live-chat offline');
+            elChatOffline.setAttribute('style','display: none; border: 0px none;');
+            elDeployScript.type='text/javascript';
+            elDeployScript.async=true;
+            elDeployScript.defer=true;
+            elDeployScript.src=deployHref;
+            
+            //place in dom
+            elSiteFooter.parentNode.insertBefore(elKiwiLiveAgent,elSiteFooter);
+            elKiwiLiveAgent.appendChild(elDeployScript);
+            elKiwiLiveAgent.appendChild(elStyles);
+            elStyles.appendChild(elStylesText);
+            elKiwiLiveAgent.appendChild(elChatOnline);
+            elKiwiLiveAgent.appendChild(elChatOffline);
+            elChatOnline.appendChild(elChatOnlineImg);
+            elChatOnline.appendChild(elChatOnlineSpan);
+            elChatOnlineSpan.appendChild(elChatOnlineText);
+            elChatOffline.appendChild(elChatOfflineImg);
+            elChatOffline.appendChild(elChatOfflineSpan);
+            elChatOfflineSpan.appendChild(elChatOfflineText);
+
+            kiwi.liveagent.init(buttonsId, deployId, orgId, initHref, elChatOnline, elChatOffline);
+            return true;
+        } else {
+            _satellite.notify('ERROR: Missing liveagent button/deploy/org id or init/deploy url values. //e.g. kiwi.liveagent.deploy("5730B000000L3yY", "5720B000000L31K", "00DU0000000MFNJ", "https://d.la2-c2-phx.salesforceliveagent.com/chat", "https://c.la2-c2-phx.salesforceliveagent.com/content/g/js/42.0/deployment.js");');
+            return false;
+        }
+    },
+    init: function(buttonsId, deployId, orgId, initHref, elChatOnline, elChatOffline) {
+        var tries = 0;
+        if (typeof window.liveagent === 'object') {
+
+            var elChat = document.querySelector('.live-chat');
+            setTimeout(function(){
+                elChat.classList.add('appear');
+            }, 500);
+
+            elChatOnline.addEventListener('click', function(e) {
+                e.preventDefault();
+                liveagent.startChat(buttonsId); // show popup
+            });
+
+            liveagent.init(initHref, deployId, orgId);
+            liveagent.setChatWindowHeight(560);
+
+            if (!window._laq) { window._laq = []; }
+            window._laq.push(function(){
+                liveagent.showWhenOnline(buttonsId, elChatOnline);
+                liveagent.showWhenOffline(buttonsId, elChatOffline);
+            });
+
+        } else {
+            if (tries < 5) {
+                setTimeout(function () {
+                    kiwi.liveagent.init(buttonsId, deployId, orgId, initHref, elChatOnline, elChatOffline);
+                    tries++;
+                }, 300);
+            } else {
+                _satellite.notify('ERROR: Liveagent deploy timed out after 5 attempts.');
+                return false;
+            }
+        }
+    },
+    isReady: 0
+};
+kiwi.liveagent.isReady = 1;
+if(kiwi.liveagent.isReady) {
+    if (document.location.host.match(/-stg\./) !== null) { //LOWER
+        kiwi.liveagent.deploy(
+            '5732A0000008R8g', //Live Agent Buttons ID
+            '5722A0000008QqO', //Live Agent Deployment ID
+            '00DJ0000003QxiR', //Live Agent Organization ID
+            'https://d.la3-c1cs-phx.salesforceliveagent.com/chat', //Live Agent Init URL
+            'https://c.la3-c1cs-phx.salesforceliveagent.com/content/g/js/45.0/deployment.js' // Live Agent Deploy URL
+        );
+    } else {// PRODUCTION
+        kiwi.liveagent.deploy(
+            '5732A0000008R8g', //Live Agent Buttons ID
+            '5722A0000008QqO', //Live Agent Deployment ID
+            '00DF00000005YBt', //Live Agent Organization ID
+            'https://d.la2-c1-phx.salesforceliveagent.com/chat', //Live Agent Init URL
+            'https://c.la2-c1-phx.salesforceliveagent.com/content/g/js/45.0/deployment.js' // Live Agent Deploy URL
+        );
+    }
+}
+
+/* Production/Full from Emad Raza on 2019-02-28
+Environment: Full (lower environment)
+<img id="liveagent_button_online_5732A0000008R8g" 
+     style="display: none; border: 0px none; cursor: pointer" 
+     onclick="liveagent.startChat('5732A0000008R8g')" 
+     src="https://full-apform.cs10.force.com/AP/resource/1546976502000/liveagentonline" />
+<img id="liveagent_button_offline_5732A0000008R8g" 
+     style="display: none; border: 0px none;" 
+     src="https://full-apform.cs10.force.com/AP/resource/1546976501000/AP_Offline" />
+<script type="text/javascript">
+    if (!window._laq) { window._laq = []; }
+    window._laq.push(function(){
+        liveagent.showWhenOnline('5732A0000008R8g', document.getElementById('liveagent_button_online_5732A0000008R8g'));
+        liveagent.showWhenOffline('5732A0000008R8g', document.getElementById('liveagent_button_offline_5732A0000008R8g'));
+    });
+</script>
+<script type='text/javascript' src='https://c.la3-c1cs-phx.salesforceliveagent.com/content/g/js/45.0/deployment.js'></script>
+<script type='text/javascript'>
+    liveagent.init('https://d.la3-c1cs-phx.salesforceliveagent.com/chat', '5722A0000008QqO', '00DJ0000003QxiR');
+</script>
+
+Environment: Production
+<img id="liveagent_button_online_5732A0000008R8g" 
+     style="display: none; border: 0px none; cursor: pointer" 
+     onclick="liveagent.startChat('5732A0000008R8g')" 
+     src="https://apform.secure.force.com/AP/resource/1546976502000/liveagentonline" />
+<img id="liveagent_button_offline_5732A0000008R8g" 
+     style="display: none; border: 0px none; " 
+     src="https://apform.secure.force.com/AP/resource/1546976501000/AP_Offline" />
+
+<script type="text/javascript">
+    if (!window._laq) { window._laq = []; }
+    window._laq.push(function(){
+        liveagent.showWhenOnline('5732A0000008R8g', document.getElementById('liveagent_button_online_5732A0000008R8g'));
+        liveagent.showWhenOffline('5732A0000008R8g', document.getElementById('liveagent_button_offline_5732A0000008R8g'));
+    });
+</script>
+<script type='text/javascript' src='https://c.la2-c1-phx.salesforceliveagent.com/content/g/js/45.0/deployment.js'></script>
+<script type='text/javascript'>
+    liveagent.init('https://d.la2-c1-phx.salesforceliveagent.com/chat', '5722A0000008QqO', '00DF00000005YBt');
+</script>
+*/
+
+/*
+//Live Agent Initialization from Adobe Target
+//Alorica UAT (WAP-878)
+<a class="live-chat"
+id="kiwi_liveagent_button_online"
+href="#"
+style="display: none;">
+    <img src="https://collegereadiness.collegeboard.org/sites/all/modules/custom/ar_live_chat/images/chat_icon.png" >
+    <span id="liveChat">Live Chat</span>
+</a>
+<a class="live-chat offline"
+id="kiwi_liveagent_button_offline"
+style="display: none;">
+    <img src="https://collegereadiness.collegeboard.org/sites/all/modules/custom/ar_live_chat/images/chat_icon.png" >
+    <span>Live Chat</span>
+</a>
+kiwi = window.kiwi || {};
+kiwi.liveagent = kiwi.liveagent || {};
+if (kiwi.liveagent.isReady) kiwi.liveagent.deploy(
+    '573J00000008On4', //Live Agent Buttons ID
+    '572J00000008OVt', //Live Agent Deployment ID
+    '00DJ0000003OaqN', //Live Agent Organization ID
+    'https://d.la3-c1cs-phx.salesforceliveagent.com/chat', //Live Agent Init URL
+    'https://c.la3-c1cs-phx.salesforceliveagent.com/content/g/js/42.0/deployment.js' // Live Agent Deploy URL
+);
+//Alorica Prod (WAP-878)
+kiwi = window.kiwi || {};
+kiwi.liveagent = kiwi.liveagent || {};
+if (kiwi.liveagent.isReady) kiwi.liveagent.deploy(
+    '5730B000000L3yY', //Live Agent Buttons ID
+    '5720B000000L31K', //Live Agent Deployment ID
+    '00DU0000000MFNJ', //Live Agent Organization ID
+    'https://d.la2-c2-phx.salesforceliveagent.com/chat', //Live Agent Init URL
+    'https://c.la2-c2-phx.salesforceliveagent.com/content/g/js/42.0/deployment.js' // Live Agent Deploy URL
+);
+
+//ARU Prod (see collegereadiness.collegeboard.org/help) (WAP-878)
+kiwi = window.kiwi || {};
+kiwi.liveagent = kiwi.liveagent || {};
+if (kiwi.liveagent.isReady) kiwi.liveagent.deploy(
+    '5730B000000PGHR', //Live Agent Buttons ID
+    '5720B000000PFWw', //Live Agent Deployment ID
+    '00DU0000000MFNJ', //Live Agent Organization ID
+    'https://d.la2-c2-phx.salesforceliveagent.com/chat', //Live Agent Init URL
+    'https://c.la2-c2-phx.salesforceliveagent.com/content/g/js/40.0/deployment.js' // Live Agent Deploy URL
+);
+*/
+
+});

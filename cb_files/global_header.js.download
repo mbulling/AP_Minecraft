@@ -1,0 +1,141 @@
+/* global cb */
+(function ($) {
+  'use strict';
+
+  var appId = 292;
+  var logo = '';
+  var exposedMenuItems = 4;
+  var headerTemplate = 'globalheader';
+  var headerVersion = '';
+  var loginRedirectUrl = '';
+  var override_links = '';
+  var siteType = '';
+  var siteName = '';
+  var lockupLogo = true;
+  var searchType = '';
+  var siteCode = 'gh';
+  var useLoginWidget = true;
+  var useQuickSiteSearchWidget = true;
+  var searchFacetAudience = '';
+  var searchFacetType = '';
+  var searchFacetCategory = '';
+
+  // Ensure the drupal settings exists.
+  if (typeof Drupal.settings.widgets !== 'undefined') {
+    appId = Drupal.settings.widgets.header.appId;
+    logo = Drupal.settings.widgets.header.logo;
+    exposedMenuItems = Drupal.settings.widgets.header.exposedMenuItems;
+    headerTemplate = Drupal.settings.widgets.header.headerTemplate;
+    loginRedirectUrl = Drupal.settings.widgets.header.loginRedirectUrl;
+    override_links = Drupal.settings.widgets.header.override_links;
+    siteType = Drupal.settings.widgets.header.siteType;
+    siteName = Drupal.settings.widgets.header.siteName;
+    lockupLogo = Drupal.settings.widgets.header.lockupLogo;
+    searchType = Drupal.settings.widgets.header.searchType;
+    siteCode = Drupal.settings.widgets.header.siteCode;
+    useLoginWidget = Drupal.settings.widgets.header.useLoginWidget;
+    useQuickSiteSearchWidget = Drupal.settings.widgets.header.useQuickSiteSearchWidget;
+    searchFacetAudience = Drupal.settings.widgets.header.searchFacetAudience;
+    searchFacetType = Drupal.settings.widgets.header.searchFacetType;
+    searchFacetCategory = Drupal.settings.widgets.header.searchFacetCategory;
+
+
+  }
+
+  // Default options to old Legacy version.
+  var options = {
+    placement: {
+      domElement: '#global-header'
+    },
+    skin: {
+      template: {
+        uri: headerTemplate + '.tpl'
+      }
+    },
+    config: {
+      show: exposedMenuItems,
+      skipLocation: '#main-content',
+      useQuickSiteSearchWidget: useQuickSiteSearchWidget,
+      useLoginWidget: useLoginWidget,
+      searchWidgetOptions: {
+        config: {
+          searchType: searchType
+        }
+      },
+
+      loginWidgetOptions: {
+        config: {
+          dispatchAfterLogin: false,
+          appId: appId,
+          redirectUrl: loginRedirectUrl
+        }
+      }
+    }
+  };
+
+  // Check if we have a Footer version number.
+  if (typeof cb.core.widgets.GlobalHeader.VERSION !== 'undefined') {
+    // Get the major version (e.g. 2.x, 3.x, etc.).
+    headerVersion = cb.core.widgets.GlobalHeader.VERSION.charAt(0);
+  }
+
+  // Leaving this as a switch for future version numbers, 2.x, 3.x, etc.
+  switch (headerVersion) {
+    case '4':
+      // 4.x version.
+      options = {
+        placement: {
+          domElement: '#global-header'
+        },
+        skin: {
+          template: {
+            uri: headerTemplate + '.tpl'
+          }
+        },
+        config: {
+          skipLocation: '#main-content',
+          useLoginWidget: useLoginWidget,
+          useSearchWidget: useQuickSiteSearchWidget,
+          siteType: siteType,
+          lockupName: siteName,
+          lockupLogo: lockupLogo,
+          lockupProperty: 'programs'
+        },
+        tracking: {
+          appId: appId,
+          siteCode: siteCode
+        },
+        widgets: {
+          search: {
+            config: {
+              logo: logo,
+              searchType: searchType,
+              facets: {
+                audience: searchFacetAudience,
+                type: searchFacetType,
+                category: searchFacetCategory
+              }
+            }
+          }
+        }
+      };
+      break;
+
+    /**
+     * Space here to add cases for 5.x, 6.x, etc.
+     */
+
+    default:
+      break;
+
+  }
+
+  // Override global header links if we have entered the links else still use default global header links.
+  if (typeof override_links !== 'undefined' && override_links !== '' && override_links !== null) {
+    options.config.links = override_links;
+  }
+
+  // Load the Global Footer.
+  new cb.core.widgets.GlobalHeader(options);
+
+})(jQuery);

@@ -1,0 +1,32 @@
+/* Bootstrap Modal lighbox.
+ *
+ * 2016-04-05 - Mike Sharkey
+ *
+ */
+(function ($) {
+  'use strict';
+
+  Drupal.behaviors.photoGalleryMods = {
+    attach: function (context, settings) {
+      $(document).ready(function () {
+        // Only run if we have a gallery on the page.
+        if ($('.cb-photo-gallery li').length > 0) {
+          // Hide thumbnail subtitles if they checked to do so.
+          $('.cb-photo-gallery.photo_only').find('.cb-photo-details-info').remove();
+          $('.cb-photo-gallery.photo_only').find('.cb-photo-thumb-info').remove();
+          $('.cb-photo-gallery.photo_without_person').find('.cb-photo-thumb-info').hide();
+
+          // Wrap each LI with an anchor, since CKEditor isn't going to let us.
+          $('.cb-photo-gallery li').each(function () {
+            if (!$(this).children(':first').is('a')) {
+              $(this).wrapInner('<a href="#0" />');
+            }
+          });
+
+          // Execute the gallery code now that we're all set.
+          $('.cb-photo-gallery').cbPhotoGallery();
+        }
+      });
+    }
+  };
+})(jQuery);

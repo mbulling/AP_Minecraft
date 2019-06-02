@@ -1,0 +1,148 @@
+(function ($) {
+  'use strict';
+
+  /**
+   * @todo: DEPRECATE ALL OF THE .ckeditor-accordion stuff once all the sites are on Apricot 2.1.*
+   * Sharkey - 2017-05-04.
+   */
+
+  Drupal.behaviors.accordion = {
+    attach: function (context, settings) {
+      // Add attributes based on panel index
+      $('.ckeditor-accordion .panel').each(function (index, el) {
+        var anchor = $('.panel').index(this);
+
+        $(this).find('.panel-heading .panel-title').attr('data-target', '#accordion-' + anchor);
+        $(this).find('.panel-heading .panel-title').attr('id', 'ui-collapse-' + anchor);
+        $(this).find('.panel-heading .panel-title').attr('aria-controls', 'accordion-' + anchor);
+
+        $(this).find('.panel-body').parent().attr('id', 'accordion-' + anchor);
+        $(this).find('.panel-body').parent().attr('aria-labelledby', 'ui-collapse-' + anchor);
+      });
+
+      $('.ckeditor-accordion .panel-title').on('keypress click', function (e) {
+        currentViewPort = cb.apricot.utils.viewport();
+        if (currentViewPort['name'] === 'mobile' && e.type === 'click') {
+          $(this).parent().next('.panel-collapse').collapse('toggle');
+        }
+        else if (e.type === 'keypress') {
+          var code = e.keyCode || e.which;
+          if (code === 13) {
+            $(this).parent().next('.panel-collapse').collapse('toggle');
+          }
+        }
+      });
+
+      var cWrap = $('<div class="ckeditor-accordion-container"></div>');
+      $('.ckeditor-accordion').each(function () {
+        var o = $(this).next('.ckeditor-accordion').length;
+        $(this).replaceWith(cWrap).appendTo(cWrap);
+        if (!o) {
+          cWrap = $('<div class="ckeditor-accordion-container"></div>');
+        }
+      });
+
+      $('.ckeditor-accordion h3.panel-title').append('<span class="glyphicon-cb cb-icon-icn_arrow-down">&nbsp;</span>');
+
+      $('.ckeditor-accordion-container').each(function (index, el) {
+        $(this).prepend('<div class="accordion-controls"><button class="expand-all">EXPAND ALL</button>&nbsp;&nbsp;&#124;&nbsp;&nbsp;<button class="collapse-all">COLLAPSE ALL</a></button>');
+      });
+      $('.accordion-controls .expand-all').click(function (event) {
+        $(this).parent().parent().find('.panel-collapse').collapse('show');
+      });
+      $('.accordion-controls .collapse-all').click(function (event) {
+        $(this).parent().parent().find('.panel-collapse.in').collapse('hide');
+      });
+
+      // Do stuff on shown & on hidden
+      $('.ckeditor-accordion .collapse').on('shown.bs.collapse', function () {
+        $(this).attr('tabindex', '0');
+        $(this).parent().find('.cb-icon-icn_arrow-down').removeClass('cb-icon-icn_arrow-down').addClass('cb-icon-icn_arrow-up');
+        $(this).parent().find('.panel-title').attr({
+          'aria-expanded': 'true'
+        });
+        $(this).parent().find('.panel-collapse').attr('aria-hidden', 'false');
+      }).on('hidden.bs.collapse', function () {
+        $(this).attr('tabindex', '-1');
+        $(this).parent().find('.cb-icon-icn_arrow-up').removeClass('cb-icon-icn_arrow-up').addClass('cb-icon-icn_arrow-down');
+        $(this).parent().find('.panel-title').attr({
+          'aria-expanded': 'false'
+        });
+        $(this).parent().find('.panel-collapse').attr('aria-hidden', 'true');
+      });
+
+      $(window).on('load', function () {
+
+        // Jumplinks initialization.
+        if ($('.cb-jumplinks-menu').length > 0) {
+          $('#main-content').addClass('cb-jumplinks-container');
+          $('.cb-jumplinks-menu').cbJumpLinks({
+            generateSelector: 'attr'
+          });
+
+          // Move the jumplinks over a bit so the contextual links aren't in the way.
+          if ($('.contextual-links-wrapper').length > 0 && $('.cb-jumplinks-back').length > 0) {
+            $('.cb-jumplinks-back').css({
+              'z-index': '-1',
+              'margin': '0 0 0 -2em'
+            });
+          }
+        }
+
+        // Wiris height adjustment
+        var images = $('img.Wirisformula');
+
+        $.each(images, function () {
+          // Get the height of the image, because onLoad, it's hidden in a tab.
+          var tmp = new Image();
+          tmp.src = $(this).attr('src');
+
+          // offset the image and push it down a bit
+          $(this).show().css('vertical-align', '-' + tmp.height / 2 + 'px');
+        });
+
+      });
+
+    }
+  };
+
+  /*
+   * Default jQuery dialog options used when creating the Linkit modal.
+   */
+  if (typeof (Drupal.linkit) !== 'undefined') {
+    Drupal.linkit.modalOptions = function () {
+      return {
+        dialogClass: 'linkit-wrapper',
+        modal: false,
+        draggable: true,
+        resizable: true,
+        width: 520,
+        position: ['center', 0],
+        minHeight: 0,
+        zIndex: 210000,
+        close: Drupal.linkit.modalClose,
+        title: 'Link'
+      };
+    };
+
+
+    /*
+     * Close the Linkit modal.
+     */
+    Drupal.linkit.modalClose = function (e) {
+      $('#linkit-modal').dialog('destroy').remove();
+      // Make sure the current intstance settings are removed when the modal is
+      // closed.
+      Drupal.settings.linkit.currentInstance = {};
+
+      // The event object does not have a preventDefault member in
+      // Internet Explorer prior to version 9.
+      if (e && e.preventDefault) {
+        e.preventDefault();
+      }
+      else {
+        return false;
+      }
+    };
+  }
+})(jQuery);

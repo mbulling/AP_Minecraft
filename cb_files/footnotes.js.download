@@ -1,0 +1,19 @@
+/* global cb */
+
+/*  Footnote Accessibility.
+ *
+ *  @Author : Mike Sharkey
+ *  @Date   : 2017-04-21
+ */
+
+(function ($, cb) {
+  'use strict';
+
+  Drupal.behaviors.accessibleFootnotes = {
+    attach: function () {
+      $('.footnotes').each(function (index) {
+        cb.apricot.utils.accBookmark($(this));
+      });
+    }
+  };
+})(jQuery, cb);

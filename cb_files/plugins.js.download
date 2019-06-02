@@ -1,0 +1,245 @@
+(function ($) {
+  "use strict";
+  // $.checkViewport was moved into apricot, it's available under:
+  // cb.apricot.utils.viewport()
+
+
+  /***
+   *
+   * @param options
+   * @returns {fn}
+   */
+  $.fn.divideLists = function (options) {
+
+    // Merge options
+    options = $.extend({
+      itemEl: "li"
+    }, options);
+
+    var wrapperType = this.prop('tagName');
+    var $listItems = this.children(options.itemEl);
+    var itemCount = $listItems.length;
+    var maxItems = Math.ceil(itemCount / 2);
+
+    maxItems = maxItems || 1;
+
+    // create a new block/list
+    var $list1 = $('<' + wrapperType + '/>').addClass('dividedList firstList col-md-6');
+    var $list2 = $('<' + wrapperType + '/>').addClass('dividedList secondList col-md-6');
+
+    $list1.append("<div class='divlist row' />");
+    $list2.append("<div class='divlist row' />");
+
+    $.each($listItems, function (index) {
+      if (index < maxItems) {
+        $(this).appendTo($('.divlist.row', $list1));
+      }
+      else {
+        $(this).appendTo($('.divlist.row', $list2));
+      }
+    });
+
+    this.append($list1);
+    this.append($list2);
+
+    this.wrap($('<div class="row" />'));
+    return this;
+  };
+
+
+})(jQuery);
+
++function ($, cb) {
+  'use strict';
+
+  cb.apricot.seeMorePlain = function (element, options) {
+
+    var
+      plugin = this,
+      $seeMore = {};
+
+    plugin.$el = $(element);
+    plugin.id = cb.apricot.utils.uniqueID(10, 'cbSeeMorePlain');
+
+    var
+      generateMarkup = function () {
+        var
+          content = plugin.$el.html(),
+          $div1 = {},
+          $div2 = {},
+          $div3 = {};
+
+        plugin.$el.empty();
+        plugin.$el.removeClass('hidden');
+
+        $seeMore = $('<div>', {'class': 'cb-accordion cb-see-more'});
+        $seeMore.appendTo(plugin.$el);
+
+        $div1 = $('<div>', {
+          'class': 'panel-group',
+          'role': 'tablist',
+          'id': plugin.id,
+          'aria-multiselectable': false
+        }).appendTo($seeMore);
+
+        $div2 = $('<div>', {
+          'class': 'panel panel-default'
+        }).appendTo($div1);
+
+        $div3 = $('<div>', {
+          'class': 'panel-heading',
+          'role': 'tab'
+        }).appendTo($div2);
+
+        $('<a>', {
+          'class': 'collapsed',
+          'role': 'button',
+          'data-toggle': 'collapse',
+          'data-parent' : '#' + plugin.id
+        }).appendTo($div3);
+
+        $div1 = $('<div>', {
+          'class': 'panel-collapse collapse',
+          'role': 'tabpanel'
+        }).appendTo($div2);
+
+        $div3 = $('<div>', {
+          'class': 'panel-body'
+        }).html(content).appendTo($div1);
+      },
+
+      accordionstatus = function ($this) {
+        var
+          $parent = $this.closest('.panel'), //.panel .panel-default
+          $heading = $parent.find('.panel-heading a').first(),
+          $title = $parent.find('.panel-title'),
+          mode = $heading.hasClass('cb-accordion-show') ? 1 : 0;
+
+        if (!!mode) {
+          $heading.removeClass('cb-accordion-show');
+          $this.attr('tabindex', '0');
+          $title.attr({
+            'aria-expanded': 'true'
+          });
+          $this.attr('aria-hidden', 'false');
+        } else {
+          $heading.addClass('cb-accordion-show');
+          $this.attr('tabindex', '-1');
+          $title.attr({
+            'aria-expanded': 'false'
+          });
+          $this.attr('aria-hidden', 'true');
+        }
+
+        $('.panel-heading[role="tab"]', $parent).trigger('accordion_change', mode);
+      };
+
+    plugin.init = function () {
+      generateMarkup();
+
+      $('.cb-see-more-plain .cb-accordion').each(function() {
+        var
+          self = $(this);
+
+        $('.panel-body', self).each(function(index) {
+          var
+            $body = $(this);
+
+          if ($('.cb-see-more', $body).length > 0) {
+            $body.addClass('has-see-more');
+          }
+        });
+
+        $('.collapse', self).each(function(index) {
+          var
+            self = $(this),
+            $parent = self.parent(),
+            $panelHeading = self.prev('.panel-heading'),
+            $heading = $('a', $panelHeading),
+            $title = $parent.find('.panel-title'),
+            tmpId = '';
+
+          // Setup the accordion
+          if (!!$panelHeading.attr('id')) {
+
+            self.attr('aria-labelledby', $panelHeading.attr('id'));
+          } else {
+            tmpId = cb.apricot.utils.uniqueID(10, 'apricot_');
+            $panelHeading.attr('id', tmpId);
+            self.attr('aria-labelledby', tmpId);
+          }
+
+          if (!!self.attr('id')) {
+            $heading.attr('href', '#' + self.attr('id'));
+            $heading.attr('aria-controls', self.attr('id'));
+          } else {
+            tmpId = cb.apricot.utils.uniqueID(10, 'apricot_');
+            self.attr('id', tmpId);
+            $heading.attr('href', '#' + tmpId);
+            $heading.attr('aria-controls', tmpId);
+          }
+
+          if (!self.hasClass('in')) {
+            $heading.removeClass('cb-accordion-show');
+            self.attr('tabindex', '0');
+            $title.attr({
+              'aria-expanded': 'true'
+            });
+            self.attr('aria-hidden', 'false');
+          } else {
+            $heading.addClass('cb-accordion-show');
+            self.attr('tabindex', '-1');
+            $title.attr({
+              'aria-expanded': 'false'
+            });
+            self.attr('aria-hidden', 'true');
+          }
+
+          $heading.click(function(e) {
+            e.preventDefault();
+
+            self.collapse('toggle');
+            accordionstatus(self);
+          });
+
+          self.on('shown.bs.collapse', function() {
+            var
+              self = $(this);
+
+            if ($('table', self).length > 0) {
+              $('table', self).cbCustomScrollbar('adjustTable');
+            }
+          });
+        });
+      });
+    };
+
+    plugin.init();
+  };
+
+  $.fn.cbSeeMorePlain = function (options) {
+    var args = arguments;
+    if (options === undefined || typeof options === 'object') {
+      return this.each(function () {
+        if (!$(this).data('cbSeeMorePlain')) {
+          $(this).data('cbSeeMorePlain', new cb.apricot.seeMorePlain(this, options));
+        }
+      });
+    } else if (typeof options === 'string') {
+      return this.each(function () {
+        var instance = $.data(this, 'cbSeeMorePlain');
+        if (instance instanceof cb.apricot.seeMorePlain && typeof instance[options] === 'function') {
+          instance[options].apply( instance, Array.prototype.slice.call( args, 1 ) );
+        }
+      });
+    }
+  };
+
+  $(window).on('load', function () {
+    if ($('.cb-see-more-plain').length > 0) {
+      $('.cb-see-more-plain').each(function () {
+        $(this).cbSeeMorePlain();
+      });
+    }
+  });
+}(jQuery, cb);

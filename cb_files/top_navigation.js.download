@@ -1,0 +1,169 @@
+(function ($) {
+
+  $(function () {
+
+    // top navigation modifications.
+    var $top_section_navigation = $('.top-section-navigation .content .menu').first(),
+      $menu_trigger = $('.section-nav-trigger'),
+      $top_menu_items = $('li', $top_section_navigation),
+      $left_side_navigation = $('.cb-left-navigation .content .menu').first(),
+      $left_menu_items = $('li', $left_side_navigation),
+
+      tmp_label_txt,
+      $top_section_utilities,
+      $mobile_menu_utilities
+      ;
+
+    // hide the navigation trigger if the menu block is disabled
+    if ($top_section_navigation.length == 0) {
+      $menu_trigger.hide();
+    }
+
+    tmp_label_txt = "";
+    if ($top_section_navigation.length > 0) {
+
+
+      // hide the navigation while manipulating the dom to prevent funny flickering
+      $top_section_navigation.hide();
+
+      // adding the up arrow so it's only visible on mobile devices
+      $('.top-navigation-wrapper').prepend('<span class="arrow visible-xs"></span>');
+
+      var $first_nav_item = $("li>a", $top_section_navigation).first();
+      if ($first_nav_item.text().toLowerCase().indexOf('home') >= 0) {
+
+        // check if we have a sr-only span within the menu item
+        $first_nav_item.addClass('home-link');
+        tmp_label_txt = $($first_nav_item).text();
+
+
+        $first_nav_item.html('<span class="sr-only">' + tmp_label_txt + '</span><span class="visible-xs">Home</span><span class="cb-icon-home hidden-xs"></span>');
+
+      }
+
+      $menu_trigger.on('click', function () {
+        $(this).find('i').toggleClass('cb-icon-icn_arrow-down');
+        $(this).find('i').toggleClass('cb-icon-icn_arrow-up');
+        $('.top-navigation-wrapper').toggleClass('open-nav-menu');
+        $('body').toggleClass('has-open-nav-menu');
+
+      });
+
+      // Open Sample Questions menu item in a new window
+      $('.top-navigation a:contains(Sample Questions)').attr('target', '_blank');
+      $('.cb-left-navigation a:contains(Sample Questions)').attr('target', '_blank');
+
+      // fading in the navigation while manipulating the dom to prevent funny flickering
+      $top_section_navigation.show();
+
+
+      // Some accessibility enhancements.
+      // Add hidden text + aria-selected attribute to the active menu item.
+      $('a', $top_section_navigation).attr('aria-selected', 'false');
+      $('a.active', $top_section_navigation)
+        .attr('aria-selected', 'true')
+        .prepend('<span class="sr-only">Active Page: </span>');
+
+      // Add Aria selected also to selected parents in top nav menu.
+      $('a.active-trail', $top_section_navigation)
+        .attr('aria-selected', 'true');
+    }
+
+    if ($left_side_navigation.length > 0) {
+      // Set aria-selected values
+      // Add screen reader text for the active page
+
+      $('a', $left_side_navigation).attr('aria-selected', 'false');
+      $('a.active', $left_side_navigation)
+        .attr('aria-selected', 'true')
+        .prepend('<span class="sr-only">Active Page: </span>');
+
+    }
+
+    $top_section_utilities = $('.top-section-utilities .content .menu').first();
+    if ($top_section_utilities.length > 0) {
+
+      $top_section_utilities.hide();
+
+      $('a', $top_section_utilities).each(function () {
+        $(this)
+          .addClass('cb-icon-icn_' + $(this).attr('title').toLowerCase())
+          .html('<span class="sr-only">' + $(this).text() + '</span>')
+          .attr('data-toggle', 'tooltip');
+      });
+
+
+      //$top_section_utilities.tooltip({selector: '[data-toggle="tooltip"]', container: ".top-section-utilities .content", placement: 'bottom'});
+
+      $top_section_utilities.fadeIn();
+
+    }
+
+
+    // Token replacement for pull-right and icons.
+    $top_menu_items.each(function () {
+      var $that = $(this),
+        results,
+        pull_right_pattern = new RegExp("{pull-right}", "gi"),
+        icon_name_pattern = new RegExp("{icon=([ a-zA-Z0-9_/-]+)}", "gi");
+
+      if (!$('a', $that).hasClass('home-link')) {
+
+        // store screen reader text.
+        $screen_reader_tag = $('span.sr-only', $that).remove();
+
+        link_text = ($that.text());
+
+        // lets move the text into it's wrapper
+
+        var $text_wrapper = $('a', $that).html('<span>' + link_text + '</span>').find('span');///;
+        $('a', $that).prepend($screen_reader_tag);
+
+        // Pull Menu link Right
+        results = pull_right_pattern.exec(link_text);
+        if (results) {
+
+          // If a math is found, we'll add a pull-right class to parent li
+          $that.addClass('pull-right');
+
+          // and remove the token string
+          $text_wrapper.text(link_text.replace(results[0], ""))
+            .addClass('visible-xs');
+        }
+
+        link_text = ($that.text());
+
+        // Icon Replacement
+        results = icon_name_pattern.exec(link_text);
+        if (results) {
+
+          // If a math is found, we'll add a has-icon class to parent li
+          // so we can show/hide the icon depends on the view port.
+          $that.addClass('has-icon');
+
+          // and remove the token string.
+          $text_wrapper.text(link_text.replace(results[0], ""));
+          var icon = $('<i/>').addClass(results[1]).addClass('hidden-xs');
+          $('a', $that).append(icon);
+
+        }
+      }
+
+
+    });
+
+
+    // Mobile Navigation
+    // Utilities
+    $mobile_menu_utilities = $('.mobile.utilities .content .menu').first();
+    if ($mobile_menu_utilities.length > 0) {
+      $('a', $mobile_menu_utilities).each(function () {
+        $(this)
+          .prepend('<i class="cb-icon-icn_' + $(this).attr('title').toLowerCase() + '"></i>');
+      });
+    }
+
+  });
+
+
+})(jQuery);

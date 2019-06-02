@@ -1,0 +1,109 @@
+/* Bootstrap Modal lighbox.
+ *
+ * 2016-04-05 - Mike Sharkey
+ *
+ */
+(function ($) {
+  'use strict';
+
+  Drupal.behaviors.bootstrapLightbox = {
+    attach: function (context, settings) {
+      var $self;
+      var imgSrc = '';
+      var imgAlt = '';
+      var imgTitle = '';
+      var oldTitle = '';
+      var $modal;
+
+      // Apply a title to each object that has this class.
+      $('img.bootstrap_lightbox').each(function () {
+        // Check and see if we have a title already.
+        oldTitle = $(this).attr('title');
+
+        if (typeof oldTitle === 'undefined') {
+          oldTitle = '';
+        }
+        else {
+          // Add a space at the end to separate out the rest later we will add to it.
+          oldTitle += ' ';
+        }
+        $(this).attr('title', oldTitle + '[Click to expand image]');
+
+        // Set the tabindex to 0 so keyboard users can get to it.
+        $(this).attr('tabindex', 0).attr('role', 'button').attr('aria-label', 'Expand image in a modal window');
+      });
+
+      // Set the stuff up when the user clicks a lightbox image. Should also work with keyboard accessibility.
+      $('img.bootstrap_lightbox').on('click keydown', function (e) {
+        // If they press Enter or Spacebar or click, show the modal.
+        if (e.keyCode === 0 || e.keyCode === 32 || e.keyCode === 13 || typeof e.keyCode === 'undefined') {
+          e.preventDefault();
+
+          $self = $(this);
+
+          // If it is an image, grab the src.
+          if ($self.attr('src') !== '' && $self.attr('src') !== null) {
+            imgSrc = $self.attr('src');
+          }
+
+          // If it is an image, grab the alt.
+          if ($self.attr('alt') !== '' && $self.attr('alt') !== null) {
+            imgAlt = $self.attr('alt');
+          }
+
+          // If it is an image, grab the alt.
+          if ($self.attr('title') !== '' && $self.attr('title') !== null) {
+            imgTitle = $self.attr('title');
+            imgTitle = imgTitle.replace('[Click to expand image]', '');
+          }
+          // Create the modal object that will be put on the page dynamically.
+          $modal = $('<div class="modal custom-modal image-modal" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content cb-no-footer"><div class="modal-header"><button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span></button></div><div class="modal-body"><p><img src="' + imgSrc + '" alt="' + imgAlt + '" title="' + imgTitle + '"></p><p style="text-align: left;">' + imgTitle + '</p></div></div></div></div>');
+
+          // Append the modal to the page, hidden.
+          $('body').append($modal);
+
+          // Control elements behavior inside the modal.
+          $modal.on('shown.bs.modal', function (e) {
+
+            var $close = $('.close', $modal);
+
+            if (typeof $close !== 'undefined') {
+              $close.focus();
+            }
+            else {
+              $modal.focus();
+            }
+
+            // Accessibility. Trap on Shift/Tab since there's no primary button.
+            $close.keydown(function (e) {
+              if (!!cb.apricot.utils.isKey(e, 'TAB') && !e.shiftKey) { //tab
+                e.preventDefault();
+                $close.focus();
+              }
+              if (!!cb.apricot.utils.isKey(e, 'TAB') && e.shiftKey) { //shift & tab
+                e.preventDefault();
+                $close.focus();
+              }
+            });
+
+            $close.on('click', function (e) {
+              $modal.modal('hide');
+            });
+
+          });
+
+          // Once the modal is closed, set focus back to 'show modal' button.
+          $modal.on('hidden.bs.modal', function (e) {
+            $modal.remove();
+            $self.focus();
+          });
+
+          // Open modal.
+          $modal.modal({
+            backdrop: 'static'
+          });
+        }
+      });
+    }
+  };
+})(jQuery);

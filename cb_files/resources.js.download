@@ -1,0 +1,80 @@
+/*
+ * Automatically adjust resources classes.
+ *
+ * 2017-01-06 - Mitra Assadi.
+ * Re-factored for Drupal by Mike Sharkey.
+ *
+ */
+(function ($, cb) {
+  'use strict';
+
+  Drupal.behaviors.p1resources = {
+    attach: function (context, settings) {
+      $(function () {
+
+        // Module View Resource, height adjustment
+        adjustResourceHeight();
+
+        $(window).on('resize.adjustResourceHeight', function () {
+          adjustResourceHeight();
+        });
+      });
+
+      function tallestElm(arr) {
+        var result = {};
+        var heightArr = [];
+
+        result.max = 0;
+        result.arr = [];
+
+        if (arr.length > 0) {
+          $.each(arr, function (index) {
+            var self = $(this);
+            var obj = {};
+
+            obj.height = parseInt(self.outerHeight(), 10);
+            obj.elm = self;
+
+            heightArr.push(obj);
+          });
+
+          heightArr.sort(function (a, b) {
+            return a.height - b.height;
+          });
+
+          result.max = heightArr[heightArr.length - 1].height;
+          result.arr = heightArr;
+        }
+
+        return result;
+      }
+
+      function adjustHeight(obj, selector) {
+        var max = obj.max;
+        var arr = obj.arr;
+
+        $.each(arr, function (index, object) {
+          var diff = max - object.height;
+          var $elm = (!!selector) ? ($(selector, object.elm)) : object.elm;
+
+          if (diff > 0) {
+            $elm.css('margin-bottom', diff + 'px');
+          }
+        });
+      }
+
+      function adjustResourceHeight() {
+        $('.cb-resource-container').each(function () {
+          // reset all;
+          $('.cb-resource-desc', $(this)).css('margin-bottom', '0');
+
+          var
+            res = tallestElm($('.cb-resource-module', $(this)));
+
+          adjustHeight(res, '.cb-resource-desc');
+        });
+      }
+    }
+  };
+
+})(jQuery, cb);

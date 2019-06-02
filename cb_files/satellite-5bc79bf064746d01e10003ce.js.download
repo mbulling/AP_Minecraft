@@ -1,0 +1,114 @@
+_satellite.pushAsyncScript(function(event, target, $variables){
+  /**
+ * Originally modified from iframe embed to JS iife insert by jbeach on 2018-02-28
+ * <iframe class="survey-widget" id="iFrameResizer0" scrolling="no" src="https://www.surveygizmo.com/s3/3485729/ARU-Helpfulness-Survey" width="100%" height="425px" frameborder="0"></iframe>
+ * Markup Adjustments adapted from https://stackoverflow.com/questions/31206917/iframe-not-pushing-the-div-below-it-down-when-content-expands#31224136 by jbeach
+ * APS Dom insertion by aleal on 2018-03-05
+ * Adapted for Kiwi by jbeach on 2018-03-06
+ * Last updated by jbeach on 2018-12-11
+ */
+kiwi = window.kiwi || {};
+/*---- CREATE OBJECT ---*/
+kiwi.surveygizmo = kiwi.surveygizmo || {
+    isReady: 0,
+    deploySurvey: function(instanceId, surveyName, surveyUrl) {
+        var elSiteFooter = document.getElementById('global-footer'),
+            surveyStylesMobile = document.createElement('style'),
+            surveyStylesTextMobile = document.createTextNode(''+
+                                         '.kiwi-surveygizmo-container {'+
+                                                             'position: relative;'+
+                                                             'height: 0;'+
+                                                             'overflow: hidden;'+
+                                                             'padding-bottom: 154%;'+
+                                                             'margin-top: 1px;'+
+                                         '} '+
+                                         '.kiwi-surveygizmo-iframe {' +
+                                                             'position: absolute;'+
+                                                             'left: 0;'+
+                                                             'width: 100%;'+
+                                                             'height: 100%;'+
+                                                             'border: 0;'+
+                                                             'top: 0px;'+
+                                         '}'),
+            surveyStylesTablet = document.createElement('style'),
+            surveyStylesTextTablet = document.createTextNode('.kiwi-surveygizmo-container {padding-bottom: 59%;}'),
+            surveyStylesDesktop = document.createElement('style'),
+            surveyStylesTextDesktop = document.createTextNode('.kiwi-surveygizmo-container {padding-bottom: 46%;margin-top: 31px;} .kiwi-surveygizmo-iframe {top: -30px;}'),
+            surveyDiv = document.createElement('div'),
+            surveyIframe = document.createElement('iframe'),
+            elSurveyParent,
+            elSurveyParent2;
+        surveyStylesMobile.appendChild(surveyStylesTextMobile);
+        surveyStylesTablet.setAttribute('media', 'all and (min-width: 768px)');
+        surveyStylesTablet.appendChild(surveyStylesTextTablet);
+        surveyStylesDesktop.setAttribute('media', 'all and (min-width: 1024px)');
+        surveyStylesDesktop.appendChild(surveyStylesTextDesktop);
+        surveyDiv.id = 'kiwi_surveygizmo_' + instanceId;
+        surveyDiv.setAttribute('class','survey-widget kiwi-surveygizmo-container');
+        elSiteFooter.style = 'margin-top: -70px;'; // counter .lv-globalfooter-widget
+        elSiteFooter.parentNode.insertBefore(surveyStylesMobile,elSiteFooter);
+        elSiteFooter.parentNode.insertBefore(surveyStylesTablet,elSiteFooter);
+        elSiteFooter.parentNode.insertBefore(surveyStylesDesktop,elSiteFooter);
+        elSurveyParent = document.createElement('div');
+        elSurveyParent.setAttribute('class', 'container');
+        elSurveyParent.style = 'position: relative;';
+        elSurveyParent2 = document.createElement('div');
+        elSurveyParent2.setAttribute('class', 'container-fluid');
+        elSurveyParent2.style = 'position: relative;';
+        elSurveyParent2.appendChild(surveyDiv);
+        elSurveyParent.appendChild(elSurveyParent2);
+        elSiteFooter.parentNode.insertBefore(elSurveyParent,elSiteFooter);
+        surveyIframe.id = 'kiwi_surveygizmo_iframe' + instanceId;
+        surveyIframe.setAttribute('class', 'kiwi-surveygizmo-iframe');
+        surveyIframe.scrolling = 'no';
+        surveyIframe.name = surveyName;     //'Global Helpfulness Survey';
+        surveyIframe.title = surveyName;    //'Global Helpfulness Survey';
+        surveyIframe.src = surveyUrl; //'//www.surveygizmo.com/s3/3485729/ARU-Helpfulness-Survey';
+        surveyDiv.appendChild(surveyIframe);
+        elSurveyParent.style.display='none';
+        surveyIframe.onload = kiwi.surveygizmo.show(elSurveyParent);
+    },
+    show: function(hiddenEl) {
+        setTimeout(function(){
+            //$chat.addClass('appear');
+            hiddenEl.style.display='block';
+        }, 500);
+    },
+    deploy: function(instanceId, surveyName, surveyUrl) {
+        if (instanceId && surveyName && surveyUrl) {
+            kiwi.surveygizmo.deploySurvey(instanceId, surveyName, surveyUrl);
+        } else {
+            _satellite.notify('ERROR: Missing surveygizmo instance id or survey name/url values. //e.g. kiwi.surveygizmo.deploy("aps1", "ARU Helpfulness Survey", "//www.surveygizmo.com/s3/3485729/ARU-Helpfulness-Survey");');
+            return false;
+        }
+    }
+};
+kiwi.surveygizmo.isReady = 1;
+/*---- DEPLOY OBJECT ---*/
+var tries = 0;
+if (kiwi.surveygizmo.isReady) {
+    kiwi.surveygizmo.deploy(
+        'aps1',                                                     //Survey Instance ID
+        'Global Helpfulness Survey',                                //Survey iFrame Name/Title
+        '//www.surveygizmo.com/s3/3485729/ARU-Helpfulness-Survey'   //Survey iFrame Source URL
+    );
+} else {
+    if (tries < 5) {
+        setTimeout(function () {
+            tries++;
+        }, 300);
+    } else {
+        _satellite.notify('ERROR: Survey Gizmo deploy timed out after 5 attempts.');
+    }
+}
+
+/* contents of: //www.surveygizmo.com/s3/3485729/ARU-Helpfulness-Survey
+ if(self.SG_evaluate(5) && (self.SG_evaluate(9) "courses/")) {
+ self.showQuestion(11)
+ } else {
+ self.hideQuestion(11);
+ self.clearQuestionData('[name |= sgE-3485729-5-11]')
+ }
+ */
+
+});

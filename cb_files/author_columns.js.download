@@ -1,0 +1,15 @@
+(function ($) {
+  'use strict';
+
+  Drupal.behaviors.APCAuthorColumns = {
+    attach: function (context, settings) {
+      var $authorList = $('.view-author-block .view-content ul.list-group li.list-group-item');
+
+      if ($authorList.length > 1) {
+        $($authorList).each(function () {
+          $(this).addClass('col-sm-6');
+        });
+      }
+    }
+  };
+})(jQuery);

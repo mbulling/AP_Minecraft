@@ -1,0 +1,216 @@
+// Scroll Spy
+(function ($) {
+
+  $(function () {
+    // Attach an event to collapsible panels to recalculate table height
+    $('div[id^="accordion"]').on("shown.bs.collapse", function () {
+      var self = $(this);
+      if (typeof($().cbCustomScrollbar) == 'function') {
+        $('table', self).cbCustomScrollbar('adjustTable');
+      }
+    });
+  });
+
+
+  Drupal.behaviors.theme = {
+    attach: function (context, settings) {
+      // Table Classes
+      $('table:not(.sticky-header)').each(function () {
+        // Ensure this code hasn't already wrapped the table.
+        if ($(this).parents('.table-responsive').length < 1) {
+          $(this).addClass('table cb-vertical-top')
+          .removeAttr('border')
+          .wrap('<div class="table-responsive"/>');
+        }
+      });
+
+      $('table tbody tr th').addClass('cb-callout');
+
+      // Add a wrapper to YouTube videos for responsiveness.
+      $('iframe.video-filter').each(function () {
+        if (!$(this).parent().hasClass('video-container')) {
+          $(this).wrap('<div class="video-container"></div>');
+        }
+      });
+
+      // add a title attribute to all links that open in a new window
+      $('a[target=_blank]').each(function () {
+        var titleText = (typeof($(this).attr('title')) == 'undefined') ? "" : $(this).attr('title');
+        $(this).attr('title', '[Opens in New Window] ' + titleText);
+      });
+
+      // skip link accessibility
+      $(".wi-globalheader-skip").click(function(event){
+
+          // strip the leading hash and declare
+          // the content we're skipping to
+          var skipTo="#"+this.href.split('#')[1];
+
+          // Setting 'tabindex' to -1 takes an element out of normal
+          // tab flow but allows it to be focused via javascript
+          $(skipTo).attr('tabindex', -1).on('blur focusout', function () {
+
+              // when focus leaves this element,
+              // remove the tabindex attribute
+              $(this).removeAttr('tabindex');
+
+          }).focus(); // focus on the content container
+      });
+
+
+      $('.top-navigation-wrapper').css('visibility', 'visible');
+
+      function getLocation(href) {
+        var location = document.createElement("a");
+        location.href = href;
+        // IE doesn't populate all link properties when setting .href with a relative URL,
+        // however .href will return an absolute URL which then can be used on itself
+        // to populate these additional fields.
+        if (location.host == "") {
+          location.href = location.href;
+        }
+        return location;
+    };
+
+      // Smooth Scrolling
+      $('a[href*=#]:not([href=#],[data-toggle="tab"],[data-toggle="collapse"])').click(function () {
+        var link = getLocation(this);
+        if (location.pathname.replace(/^\//, '') == link.pathname.replace(/^\//, '') && location.hostname == link.hostname) {
+
+          var target = $(link.hash);
+          var top_offset = '';
+
+          target = target.length ? target : $('[name=' + link.hash.slice(1) + ']');
+
+          if (target.length) {
+            if($('.cb-local-navigation').length > 0 && $(window).scrollTop() == 0) {
+              top_offset = 115;
+            }
+            else if($('body').hasClass('node-type-question') && $(window).scrollTop() == 0) {
+              top_offset = 0;
+            }
+            else if($('body').hasClass('node-type-question') && $(window).scrollTop() != 0) {
+              top_offset = 0;
+            }
+            else if($('.cb-local-navigation').length == 0){
+              top_offset = 0;
+            }
+            else {
+              top_offset = 55;
+            }
+            $('html,body').animate({
+              scrollTop: target.offset().top - top_offset
+            }, 1000);
+            return false;
+          }
+        }
+      });
+
+      // Hero section ID fix for Activity Map Tracking
+
+      $('.cb-hero').each( function( idx, elm) {
+          var hero = $(elm);
+          hero.attr("id" , "cbHero_"+ idx);
+       });
+    }
+  };
+
+  Drupal.behaviors.jumpmenu = {
+    attach: function (context, settings) {
+      // Jump Menu / Affix
+      var pageTitle = $('#page-title').text();
+
+      // show jump menu after page load
+      $('.view-jump-menu').show();
+
+      // add attributes to jump menu
+      $('.view-jump-menu').attr({
+        'role': 'navigation',
+        'Aria-Label': pageTitle + ' Content Sections',
+      });
+
+      // jump menu link attributes
+      $('.view-jump-menu ul li a').each(function (index, el) {
+        var headline = $(this).text();
+        headline = $.trim(headline);
+        headline = headline.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-_\s]/g, '-').toLowerCase();
+        $(this).attr('href', '#' + headline);
+      });
+
+      // anchor title attributes
+      $('.jump-link-title').each(function (index, el) {
+        var headline = $(this).text();
+        headline = $.trim(headline);
+        headline = headline.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-_\s]/g, '-').toLowerCase();
+        $(this).attr('id', headline);
+      });
+
+      // addClass to #sidebar-left if there's a jump menu
+      if ($('.view-jump-menu').length) {
+        $('#sidebar-left').addClass('has-jump-menu');
+      }
+
+      if($('.cb-local-navigation').length > 0) {
+        $('body').addClass('has-local-nav');
+      }
+
+      // jump menu affix
+      $('#sidebar-left.has-jump-menu').stick_in_parent({
+        recalc_every: 10
+      }).on('sticky_kit:bottom', function (e) {
+        $(this).parent().css('position', 'static');
+      }).on('sticky_kit:unbottom', function (e) {
+        $(this).parent().css('position', 'relative');
+      });
+
+
+      // ScrollSpy
+      $('.view-jump-menu ul').addClass('nav nav-tabs').attr('role', 'tablist');
+
+      if($('.cb-local-navigation').length > 0) {
+        $('body').attr({
+          'data-spy': 'scroll',
+          'data-target': '.view-jump-menu',
+          'data-offset': 60,
+        });
+      }else{
+        $('body').attr({
+          'data-spy': 'scroll',
+          'data-target': '.view-jump-menu',
+          'data-offset': 10,
+        });
+      }
+
+      // Polyfill added for IE
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
+      if (!String.prototype.startsWith) {
+          String.prototype.startsWith = function(search, pos) {
+              return this.substr(!pos || pos < 0 ? 0 : +pos, search.length) === search;
+          };
+      }
+
+      // Accessibility fix for Jump links.
+      $('a').click(function() {
+        var _urlHREF = $(this).attr('href');
+        //check if this is generated from apricot and exclude them
+        if(_urlHREF && !_urlHREF.startsWith('#apricot_')) {
+          var target = $($(this).attr('href'));
+          if(target) {
+            // set tabindex to -1 for the anchor target and set focus to the target
+              target.attr('tabindex', '-1');
+              target.focus();
+          }
+        }
+      });
+
+    }
+  };
+
+  Drupal.behaviors.imgnullalt = {
+    attach: function (context, settings) {
+      // 5149 Apply null alt attributes to images that do not have any alt attribute
+      $('img:not([alt])').attr('alt', "");
+    }
+  };
+
+})(jQuery);

@@ -1,0 +1,87 @@
+/**
+ * Created by mhoresh on 3/12/15.
+ */
+(function ($) {
+  "use strict";
+
+  Drupal.behaviors.apricot_top_nav = {
+    attach: function (context) {
+
+      var $local_navigation = $('.cb-local-navigation');
+
+      $($local_navigation, context).once(function () {
+
+        var $top_menu = $('ul.menu', $local_navigation).first();
+        var $home_link = $('li.home > a', $top_menu);
+        var $all_links = $('a', $top_menu);
+        var $icon_list_items = $('[data-icon-type]');
+        var $dropdown_menus = $('li.dropdown', $top_menu);
+
+        $top_menu.removeClass('menu')
+            .addClass('cb-local-menu');
+
+        // Wrap all links text within a span tag.
+        $all_links.each(function () {
+          var $self = $(this);
+          var link_text = $self.text();
+          var dropdown_arrow_markup = ['<span class="sr-only">Press Enter for Dropdown.</span>',
+            '<i class="glyphicon-cb cb-icon-icn_arrow-down" aria-hidden="true"></i>',
+            '<i class="glyphicon-cb cb-icon-icn_arrow-up hidden" aria-hidden="true"></i>'
+          ].join('');
+
+          $self.html('<span>' + link_text + '</span>');
+
+          // if the link has a dropdown-toggle class add drop down icon
+          if ($self.hasClass('dropdown-toggle')) {
+            $self.append(dropdown_arrow_markup);
+          }
+        });
+
+        // Fix Home links.
+        $home_link.each(function () {
+          var $self = $(this);
+          $self.prepend('<i class="glyphicon-cb cb-icon-icn_home  hidden-xs" aria-hidden="true"></i>');
+        });
+
+        // Items with Icons
+        $icon_list_items.each(function () {
+          var $self = $(this);
+          var $link = $self.children('a').first();
+
+          $link.prepend('<i class="glyphicon-cb ' + $self.attr('data-icon-type') + '"  aria-hidden="true"></i>');
+
+        });
+
+        // Items that should render as dropdown menus.
+        $dropdown_menus.each(function () {
+          var $self = $(this);
+          var $submenu = $self.children('ul').first();
+
+          $submenu.addClass('dropdown-menu');
+          $submenu.attr('role', 'menu');
+        });
+
+        // Initialize Menu.
+        $local_navigation.cbLocalNavigation(({
+          mobileLayout: Drupal.settings.apricot.local_nav.mobileLayout,
+          desktopHomeLabel: Drupal.settings.apricot.local_nav.desktopHomeLabel,
+          desktopLabelPrefix: Drupal.settings.apricot.local_nav.desktopLabelPrefix,
+          customHomeLabel: Drupal.settings.apricot.local_nav.customHomeLabel,
+          mobileHomeLabel: Drupal.settings.apricot.local_nav.mobileHomeLabel,
+          mobileLabelPrefix: Drupal.settings.apricot.local_nav.mobileLabelPrefix,
+          addDesktopParentLabel: Drupal.settings.apricot.local_nav.addDesktopParentLabel,
+          addMobileParentLabel: Drupal.settings.apricot.local_nav.addMobileParentLabel,
+          moreLabel: Drupal.settings.apricot.local_nav.moreLabel
+        }));
+
+      });
+
+      // Add this JS code to make the anchor navigation sticky and display CTA buttons.
+      if ($('.cb-anchor-menu').length > 0) {
+        $('.cb-anchor-menu').cbAnchorMenu();
+      }
+
+    }
+  };
+
+})(jQuery);
