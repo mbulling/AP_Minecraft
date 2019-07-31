@@ -1,0 +1,1 @@
+function _clickJacking(){try{var f=document.documentElement,b=window.self,a=window.top;if(b!=a){f.style.display="none";f.style.visibility="hidden";a.location=b.location;console.log("This content cannot be displayed in a frame.");return false;}else{return true;}}catch(c){return false;}}window.onload=_clickJacking;
