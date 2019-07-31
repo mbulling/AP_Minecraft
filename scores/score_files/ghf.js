@@ -1,0 +1,1 @@
+(function(){try{var b=new cb.core.widgets.GlobalHeader({placement:{domElement:"#cb-globalHeader"},tracking:{siteCode:"aps"},config:{siteType:"k-12",lockupName:"AP",lockupProperty:"programs",lockupLogo:true,useLoginWidget:false,useSearchWidget:false}});var a=new cb.core.widgets.GlobalFooter({placement:{domElement:"#cb-globalFooter"}});}catch(c){}})();
